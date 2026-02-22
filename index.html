@@ -1,1542 +1,1960 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Code de la Route Maroc — Guide Complet 2024</title>
-  <meta name="description" content="Guide complet du code de la route marocain. Panneaux, priorités, vitesses, infractions — tout ce qu'il faut savoir pour réussir votre examen." />
-  <meta name="keywords" content="code de la route maroc, panneaux signalisation maroc, examen permis maroc, code route marocain" />
-
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet" />
-
-  <!-- ============================================================
-       PASTE YOUR GOOGLE ADSENSE SCRIPT HERE (replace data-ad-client)
-       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXX" crossorigin="anonymous"></script>
-  ============================================================= -->
-
-  <style>
-    /* ── DESIGN TOKENS ── */
-    :root {
-      --red:    #c1121f;
-      --green:  #1a6b3c;
-      --sand:   #f5efe6;
-      --cream:  #fdfaf5;
-      --ink:    #1c1a17;
-      --muted:  #6b6456;
-      --border: #e0d8cc;
-      --card:   #ffffff;
-      --radius: 12px;
-      --shadow: 0 2px 20px rgba(0,0,0,0.07);
-      --font-display: 'Playfair Display', Georgia, serif;
-      --font-body:    'Source Serif 4', Georgia, serif;
-    }
-
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: var(--font-body);
-      background: var(--cream);
-      color: var(--ink);
-      font-size: 1rem;
-      line-height: 1.7;
-    }
-
-    /* ── HEADER ── */
-    header {
-      background: var(--ink);
-      color: white;
-      padding: 0;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.3);
-    }
-
-    .header-inner {
-      max-width: 900px;
-      margin: auto;
-      padding: 0.75rem 1.25rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-    }
-
-    .logo {
-      font-family: var(--font-display);
-      font-size: 1.25rem;
-      font-weight: 900;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .logo-flag { display: flex; gap: 3px; }
-    .logo-flag span {
-      display: inline-block;
-      width: 8px; height: 22px;
-      border-radius: 2px;
-    }
-    .logo-flag .r { background: var(--red); }
-    .logo-flag .g { background: var(--green); }
-
-    /* ── MOBILE NAV TOGGLE ── */
-    .nav-toggle {
-      background: none;
-      border: 1px solid rgba(255,255,255,0.3);
-      border-radius: 6px;
-      color: white;
-      padding: 6px 10px;
-      cursor: pointer;
-      font-size: 1rem;
-      display: none;
-    }
-
-    /* ── NAV ── */
-    nav {
-      background: var(--red);
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-    }
-
-    .nav-inner {
-      max-width: 900px;
-      margin: auto;
-      display: flex;
-      gap: 0;
-      white-space: nowrap;
-    }
-
-    nav a {
-      color: rgba(255,255,255,0.88);
-      text-decoration: none;
-      padding: 0.65rem 1rem;
-      font-size: 0.82rem;
-      font-weight: 600;
-      letter-spacing: 0.03em;
-      text-transform: uppercase;
-      transition: background 0.2s, color 0.2s;
-      display: inline-block;
-      border-bottom: 3px solid transparent;
-    }
-
-    nav a:hover, nav a.active {
-      background: rgba(0,0,0,0.15);
-      color: white;
-      border-bottom-color: rgba(255,255,255,0.6);
-    }
-
-    /* ── HERO ── */
-    .hero {
-      background: var(--ink);
-      color: white;
-      text-align: center;
-      padding: 4rem 1.5rem 3.5rem;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse at 60% 40%, rgba(193,18,31,0.3) 0%, transparent 60%),
-                  radial-gradient(ellipse at 30% 80%, rgba(26,107,60,0.2) 0%, transparent 50%);
-      pointer-events: none;
-    }
-
-    .hero h1 {
-      font-family: var(--font-display);
-      font-size: clamp(2rem, 6vw, 3.5rem);
-      font-weight: 900;
-      line-height: 1.1;
-      margin-bottom: 1rem;
-      position: relative;
-    }
-
-    .hero h1 span { color: #f4a261; }
-
-    .hero p {
-      font-size: 1.1rem;
-      color: rgba(255,255,255,0.72);
-      max-width: 560px;
-      margin: 0 auto 2rem;
-      font-style: italic;
-      position: relative;
-    }
-
-    .hero-stats {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      flex-wrap: wrap;
-      position: relative;
-    }
-
-    .stat {
-      text-align: center;
-    }
-    .stat strong {
-      display: block;
-      font-family: var(--font-display);
-      font-size: 2rem;
-      color: #f4a261;
-    }
-    .stat span {
-      font-size: 0.78rem;
-      color: rgba(255,255,255,0.6);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-
-    /* ── AD BANNER (top, below hero) ── */
-    .ad-banner {
-      background: var(--sand);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      padding: 0.5rem;
-      text-align: center;
-    }
-
-    .ad-placeholder {
-      background: #f0ece4;
-      border: 1px dashed #ccc;
-      border-radius: 6px;
-      padding: 1rem;
-      font-size: 0.72rem;
-      color: #aaa;
-      text-align: center;
-      min-height: 90px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      max-width: 728px;
-      margin: auto;
-    }
-
-    /* ── MAIN LAYOUT ── */
-    main {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 2rem 1.25rem 4rem;
-    }
-
-    /* ── SECTION ── */
-    .section {
-      margin-bottom: 4rem;
-      scroll-margin-top: 90px;
-    }
-
-    .section-header {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      margin-bottom: 1.5rem;
-      padding-bottom: 0.75rem;
-      border-bottom: 2px solid var(--border);
-    }
-
-    .section-icon {
-      width: 48px;
-      height: 48px;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.4rem;
-      flex-shrink: 0;
-    }
-
-    .icon-red   { background: rgba(193,18,31,0.1); }
-    .icon-green { background: rgba(26,107,60,0.1); }
-    .icon-blue  { background: rgba(30,100,180,0.1); }
-    .icon-amber { background: rgba(180,120,20,0.1); }
-    .icon-purple{ background: rgba(120,40,160,0.1); }
-
-    .section-title {
-      font-family: var(--font-display);
-      font-size: 1.7rem;
-      font-weight: 700;
-      color: var(--ink);
-      line-height: 1.2;
-    }
-
-    .section-subtitle {
-      font-size: 0.85rem;
-      color: var(--muted);
-      margin-top: 0.2rem;
-    }
-
-    /* ── CARD GRID ── */
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 1rem;
-      margin-top: 1.25rem;
-    }
-
-    .card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.25rem;
-      box-shadow: var(--shadow);
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-    .card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 28px rgba(0,0,0,0.1);
-    }
-
-    .card-label {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.07em;
-      text-transform: uppercase;
-      padding: 0.2rem 0.6rem;
-      border-radius: 4px;
-      margin-bottom: 0.75rem;
-    }
-
-    .label-red    { background: rgba(193,18,31,0.12); color: var(--red); }
-    .label-green  { background: rgba(26,107,60,0.12); color: var(--green); }
-    .label-blue   { background: rgba(30,100,180,0.12); color: #1e64b4; }
-    .label-amber  { background: rgba(180,120,20,0.12); color: #8a5c10; }
-    .label-purple { background: rgba(120,40,160,0.12); color: #7828a0; }
-
-    .card h3 {
-      font-family: var(--font-display);
-      font-size: 1rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .card p {
-      font-size: 0.88rem;
-      color: var(--muted);
-      line-height: 1.6;
-    }
-
-    /* ── SIGN SYMBOL ── */
-    .sign-symbol {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-      display: block;
-    }
-
-    /* ── INFO BLOCKS ── */
-    .info-block {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.5rem;
-      margin-bottom: 1rem;
-      box-shadow: var(--shadow);
-    }
-
-    .info-block h3 {
-      font-family: var(--font-display);
-      font-size: 1.15rem;
-      margin-bottom: 0.75rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .info-block ul {
-      padding-left: 1.25rem;
-    }
-
-    .info-block li {
-      font-size: 0.92rem;
-      color: var(--muted);
-      margin-bottom: 0.4rem;
-      line-height: 1.6;
-    }
-
-    .info-block li strong { color: var(--ink); }
-
-    /* ── SPEED TABLE ── */
-    .speed-table {
-      width: 100%;
-      border-collapse: collapse;
-      background: var(--card);
-      border-radius: var(--radius);
-      overflow: hidden;
-      box-shadow: var(--shadow);
-      border: 1px solid var(--border);
-      margin-top: 1rem;
-    }
-
-    .speed-table th {
-      background: var(--ink);
-      color: white;
-      padding: 0.75rem 1rem;
-      text-align: left;
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-    }
-
-    .speed-table td {
-      padding: 0.85rem 1rem;
-      font-size: 0.9rem;
-      border-bottom: 1px solid var(--border);
-      vertical-align: top;
-    }
-
-    .speed-table tr:last-child td { border-bottom: none; }
-    .speed-table tr:nth-child(even) td { background: var(--sand); }
-
-    .speed-badge {
-      display: inline-block;
-      background: var(--red);
-      color: white;
-      font-weight: 700;
-      font-size: 0.88rem;
-      padding: 0.2rem 0.6rem;
-      border-radius: 4px;
-      min-width: 52px;
-      text-align: center;
-    }
-
-    /* ── FINE TABLE ── */
-    .fine-table {
-      width: 100%;
-      border-collapse: collapse;
-      background: var(--card);
-      border-radius: var(--radius);
-      overflow: hidden;
-      box-shadow: var(--shadow);
-      border: 1px solid var(--border);
-      margin-top: 1rem;
-    }
-    .fine-table th {
-      background: #7b1a22;
-      color: white;
-      padding: 0.75rem 1rem;
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      text-align: left;
-    }
-    .fine-table td {
-      padding: 0.85rem 1rem;
-      font-size: 0.88rem;
-      border-bottom: 1px solid var(--border);
-      vertical-align: top;
-    }
-    .fine-table tr:last-child td { border-bottom: none; }
-    .fine-table tr:nth-child(even) td { background: #fdf5f5; }
-
-    .fine-amount {
-      font-weight: 700;
-      color: var(--red);
-    }
-
-    .retrait {
-      display: inline-block;
-      background: #c1121f;
-      color: white;
-      font-size: 0.72rem;
-      font-weight: 700;
-      padding: 0.15rem 0.45rem;
-      border-radius: 3px;
-      margin-left: 4px;
-    }
-
-    /* ── PRIORITY DIAGRAM ── */
-    .priority-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.5rem;
-      margin-bottom: 1rem;
-      box-shadow: var(--shadow);
-      display: flex;
-      gap: 1rem;
-      align-items: flex-start;
-    }
-
-    .priority-num {
-      width: 40px;
-      height: 40px;
-      background: var(--red);
-      color: white;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 900;
-      font-family: var(--font-display);
-      font-size: 1.1rem;
-      flex-shrink: 0;
-    }
-
-    .priority-card h3 {
-      font-family: var(--font-display);
-      font-size: 1rem;
-      margin-bottom: 0.4rem;
-    }
-
-    .priority-card p {
-      font-size: 0.88rem;
-      color: var(--muted);
-      line-height: 1.6;
-    }
-
-    /* ── TIP BOX ── */
-    .tip-box {
-      background: linear-gradient(135deg, rgba(26,107,60,0.08), rgba(26,107,60,0.03));
-      border: 1px solid rgba(26,107,60,0.25);
-      border-left: 4px solid var(--green);
-      border-radius: var(--radius);
-      padding: 1.25rem 1.5rem;
-      margin: 1.5rem 0;
-    }
-
-    .tip-box h4 {
-      font-family: var(--font-display);
-      color: var(--green);
-      margin-bottom: 0.5rem;
-      font-size: 1rem;
-    }
-
-    .tip-box p, .tip-box ul {
-      font-size: 0.9rem;
-      color: #2d5a3d;
-      line-height: 1.7;
-    }
-
-    .tip-box ul { padding-left: 1.2rem; }
-    .tip-box li { margin-bottom: 0.3rem; }
-
-    /* ── WARN BOX ── */
-    .warn-box {
-      background: rgba(193,18,31,0.05);
-      border: 1px solid rgba(193,18,31,0.2);
-      border-left: 4px solid var(--red);
-      border-radius: var(--radius);
-      padding: 1.25rem 1.5rem;
-      margin: 1.5rem 0;
-    }
-
-    .warn-box h4 {
-      font-family: var(--font-display);
-      color: var(--red);
-      margin-bottom: 0.5rem;
-    }
-
-    .warn-box p { font-size: 0.9rem; color: #7b1a22; line-height: 1.7; }
-
-    /* ── AD MID-SECTION ── */
-    .ad-mid {
-      margin: 2.5rem 0;
-      text-align: center;
-    }
-
-    /* ── EXAM TIPS ── */
-    .exam-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-      gap: 1rem;
-      margin-top: 1rem;
-    }
-
-    .exam-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.25rem;
-      box-shadow: var(--shadow);
-    }
-
-    .exam-card .num {
-      font-family: var(--font-display);
-      font-size: 2.5rem;
-      font-weight: 900;
-      color: var(--border);
-      line-height: 1;
-      margin-bottom: 0.5rem;
-    }
-
-    .exam-card h3 {
-      font-family: var(--font-display);
-      font-size: 0.95rem;
-      margin-bottom: 0.5rem;
-      color: var(--ink);
-    }
-
-    .exam-card p {
-      font-size: 0.85rem;
-      color: var(--muted);
-      line-height: 1.6;
-    }
-
-    /* ── FOOTER ── */
-    footer {
-      background: var(--ink);
-      color: rgba(255,255,255,0.5);
-      text-align: center;
-      padding: 2rem 1rem;
-      font-size: 0.8rem;
-    }
-
-    footer strong { color: rgba(255,255,255,0.8); }
-
-    /* ── BACK TO TOP ── */
-    .back-top {
-      position: fixed;
-      bottom: 1.5rem;
-      right: 1.5rem;
-      background: var(--red);
-      color: white;
-      border: none;
-      border-radius: 50%;
-      width: 44px;
-      height: 44px;
-      font-size: 1.2rem;
-      cursor: pointer;
-      box-shadow: 0 4px 16px rgba(193,18,31,0.4);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: transform 0.2s;
-      z-index: 50;
-    }
-
-    .back-top:hover { transform: scale(1.1); }
-
-    /* ── PROGRESS BAR ── */
-    .progress-bar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      height: 3px;
-      background: #f4a261;
-      width: 0%;
-      z-index: 200;
-      transition: width 0.1s;
-    }
-
-    /* ── SEARCH ── */
-    .search-wrap {
-      max-width: 900px;
-      margin: 1.5rem auto 0;
-      padding: 0 1.25rem;
-    }
-
-    .search-input {
-      width: 100%;
-      padding: 0.85rem 1.25rem;
-      font-family: var(--font-body);
-      font-size: 0.95rem;
-      border: 2px solid var(--border);
-      border-radius: 30px;
-      background: var(--card);
-      color: var(--ink);
-      outline: none;
-      transition: border-color 0.2s;
-    }
-
-    .search-input:focus {
-      border-color: var(--red);
-    }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 640px) {
-      .hero { padding: 2.5rem 1rem 2rem; }
-      .hero-stats { gap: 1.25rem; }
-      .card-grid { grid-template-columns: 1fr; }
-      .exam-grid { grid-template-columns: 1fr; }
-      .priority-card { flex-direction: column; gap: 0.75rem; }
-      .speed-table th, .speed-table td,
-      .fine-table th, .fine-table td { padding: 0.6rem 0.75rem; font-size: 0.82rem; }
-    }
-  </style>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Code de la Route Maroc — Guide Officiel 2024</title>
+<meta name="description" content="Guide complet du code de la route marocain. Panneaux, priorités, vitesses — tout pour réussir votre examen du permis."/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;0,700;1,300;1,600&family=DM+Mono:wght@400;500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+
+<!-- AdSense placeholder:
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXX" crossorigin="anonymous"></script>
+-->
+
+<style>
+/* ═══════════════════════════════════════════
+   DESIGN TOKENS & CUSTOM PROPERTIES
+═══════════════════════════════════════════ */
+@property --angle {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+
+:root {
+  --obsidian:  #070605;
+  --dark:      #0f0d0a;
+  --surface:   #161310;
+  --surface2:  #1d1a15;
+  --surface3:  #252018;
+  --gold:      #c9933a;
+  --gold-lt:   #f0b94a;
+  --gold-pale: #f5d98a;
+  --crimson:   #b91c1c;
+  --crimson-lt:#ef4444;
+  --emerald:   #065f46;
+  --emerald-lt:#10b981;
+  --smoke:     rgba(255,255,255,0.06);
+  --smoke2:    rgba(255,255,255,0.12);
+  --border:    rgba(201,147,58,0.15);
+  --border2:   rgba(201,147,58,0.25);
+  --text:      #f0ebe2;
+  --text-muted:#9a8f7e;
+  --text-dim:  #5a5346;
+
+  --ff-display: 'Cormorant Garamond', Georgia, serif;
+  --ff-body:    'Outfit', system-ui, sans-serif;
+  --ff-mono:    'DM Mono', monospace;
+
+  --r-sm: 8px;
+  --r-md: 14px;
+  --r-lg: 20px;
+  --r-xl: 28px;
+
+  --glow-gold:   0 0 40px rgba(201,147,58,0.25);
+  --glow-crimson:0 0 40px rgba(185,28,28,0.3);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--obsidian); }
+::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
+
+body {
+  font-family: var(--ff-body);
+  background: var(--obsidian);
+  color: var(--text);
+  line-height: 1.7;
+  overflow-x: hidden;
+  cursor: none;
+}
+
+/* ── CUSTOM CURSOR ── */
+.cursor {
+  width: 12px; height: 12px;
+  background: var(--gold);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transition: transform 0.15s ease, opacity 0.2s;
+  mix-blend-mode: exclusion;
+}
+.cursor-ring {
+  width: 36px; height: 36px;
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9998;
+  transition: transform 0.35s ease, opacity 0.3s;
+  opacity: 0.5;
+}
+
+/* ── NOISE OVERLAY ── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.6;
+}
+
+/* ── ZELLIGE PATTERN (CSS only) ── */
+.zellige-bg {
+  position: absolute;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(45deg, rgba(201,147,58,0.04) 0, rgba(201,147,58,0.04) 1px, transparent 1px, transparent 50%),
+    repeating-linear-gradient(-45deg, rgba(201,147,58,0.04) 0, rgba(201,147,58,0.04) 1px, transparent 1px, transparent 50%);
+  background-size: 28px 28px;
+  pointer-events: none;
+}
+
+.zellige-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at 50% 50%, transparent 40%, var(--obsidian) 100%);
+}
+
+/* ── PROGRESS BAR ── */
+#progress {
+  position: fixed;
+  top: 0; left: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--crimson), var(--gold), var(--gold-lt));
+  width: 0%;
+  z-index: 300;
+  transition: width 0.08s;
+  box-shadow: 0 0 10px var(--gold);
+}
+
+/* ═══════════════════════════════════════════
+   HEADER & NAV
+═══════════════════════════════════════════ */
+header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 200;
+  backdrop-filter: blur(20px) saturate(150%);
+  -webkit-backdrop-filter: blur(20px);
+  background: rgba(7,6,5,0.85);
+  border-bottom: 1px solid var(--border);
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 2rem;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.logo-emblem {
+  width: 38px; height: 38px;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.logo-emblem svg { width: 100%; height: 100%; }
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.logo-text .main {
+  font-family: var(--ff-display);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.02em;
+}
+
+.logo-text .sub {
+  font-size: 0.65rem;
+  font-weight: 500;
+  color: var(--gold);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--text-muted);
+  text-decoration: none;
+  padding: 0.4rem 0.85rem;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px; left: 50%; right: 50%;
+  height: 1px;
+  background: var(--gold);
+  transition: left 0.25s, right 0.25s;
+}
+
+.nav-links a:hover { color: var(--gold-pale); }
+.nav-links a:hover::after,
+.nav-links a.active::after { left: 0.85rem; right: 0.85rem; }
+.nav-links a.active { color: var(--gold); }
+
+.nav-menu-btn {
+  display: none;
+  background: var(--smoke);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: var(--r-sm);
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.mobile-nav {
+  display: none;
+  position: fixed;
+  inset: 64px 0 0 0;
+  background: rgba(7,6,5,0.97);
+  z-index: 190;
+  padding: 2rem;
+  flex-direction: column;
+  gap: 0.25rem;
+  border-top: 1px solid var(--border);
+  overflow-y: auto;
+}
+
+.mobile-nav a {
+  color: var(--text-muted);
+  text-decoration: none;
+  padding: 1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-radius: var(--r-sm);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition: background 0.2s, color 0.2s;
+}
+.mobile-nav a:hover { background: var(--smoke); color: var(--gold); }
+
+/* ═══════════════════════════════════════════
+   HERO
+═══════════════════════════════════════════ */
+.hero {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: 8rem 2rem 4rem;
+  text-align: center;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(185,28,28,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 80%, rgba(201,147,58,0.08) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 60% at 10% 60%, rgba(6,95,70,0.06) 0%, transparent 60%);
+}
+
+.hero-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid;
+  animation: ring-rotate 20s linear infinite;
+}
+
+.hero-ring:nth-child(1) {
+  width: 600px; height: 600px;
+  border-color: rgba(201,147,58,0.08);
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+}
+.hero-ring:nth-child(2) {
+  width: 900px; height: 900px;
+  border-color: rgba(201,147,58,0.05);
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  animation-duration: 35s;
+  animation-direction: reverse;
+}
+.hero-ring:nth-child(3) {
+  width: 1200px; height: 1200px;
+  border-color: rgba(201,147,58,0.03);
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  animation-duration: 55s;
+}
+
+@keyframes ring-rotate {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to   { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(201,147,58,0.08);
+  border: 1px solid var(--border2);
+  border-radius: 100px;
+  padding: 0.35rem 1rem;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 2rem;
+  position: relative;
+  animation: fade-up 0.8s ease both;
+}
+
+.hero-eyebrow::before {
+  content: '';
+  width: 6px; height: 6px;
+  background: var(--gold);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.5; transform: scale(0.8); }
+}
+
+.hero-title {
+  font-family: var(--ff-display);
+  font-size: clamp(3.5rem, 10vw, 7.5rem);
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  position: relative;
+  animation: fade-up 0.8s 0.1s ease both;
+}
+
+.hero-title .line1 { display: block; color: var(--text); }
+.hero-title .line2 {
+  display: block;
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-lt) 40%, var(--gold-pale) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-style: italic;
+}
+.hero-title .line3 { display: block; color: var(--text-muted); font-weight: 300; font-style: italic; font-size: 0.65em; margin-top: 0.2em; }
+
+.hero-desc {
+  max-width: 520px;
+  margin: 2rem auto 3rem;
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  font-weight: 300;
+  line-height: 1.75;
+  position: relative;
+  animation: fade-up 0.8s 0.2s ease both;
+}
+
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+  position: relative;
+  animation: fade-up 0.8s 0.3s ease both;
+}
+
+.hero-stat {
+  text-align: center;
+}
+
+.hero-stat .num {
+  font-family: var(--ff-display);
+  font-size: 3rem;
+  font-weight: 600;
+  line-height: 1;
+  background: linear-gradient(135deg, var(--gold), var(--gold-pale));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-stat .lbl {
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-top: 4px;
+}
+
+.scroll-hint {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-dim);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  animation: fade-up 1s 0.8s ease both;
+}
+
+.scroll-hint .line {
+  width: 1px; height: 48px;
+  background: linear-gradient(to bottom, var(--gold), transparent);
+  animation: scroll-line 2s ease-in-out infinite;
+}
+
+@keyframes scroll-line {
+  0%, 100% { transform: scaleY(1); opacity: 1; }
+  50%       { transform: scaleY(0.5); opacity: 0.5; }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── HERO AD ── */
+.hero-ad {
+  position: relative;
+  padding: 1rem 2rem;
+  text-align: center;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: rgba(201,147,58,0.02);
+}
+
+/* ═══════════════════════════════════════════
+   LAYOUT
+═══════════════════════════════════════════ */
+.page-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* ── SECTION WRAPPER ── */
+.section {
+  padding: 7rem 0;
+  position: relative;
+  scroll-margin-top: 80px;
+}
+
+.section + .section {
+  border-top: 1px solid var(--border);
+}
+
+/* ── SECTION HEADER ── */
+.section-head {
+  margin-bottom: 4rem;
+  position: relative;
+}
+
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.25rem;
+}
+
+.section-tag::before {
+  content: '';
+  width: 24px; height: 1px;
+  background: var(--gold);
+}
+
+.section-title {
+  font-family: var(--ff-display);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+.section-title em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.section-desc {
+  margin-top: 1rem;
+  color: var(--text-muted);
+  font-size: 1rem;
+  font-weight: 300;
+  max-width: 500px;
+  line-height: 1.8;
+}
+
+/* ── DIVIDER ── */
+.divider {
+  width: 60px; height: 2px;
+  background: linear-gradient(90deg, var(--crimson), var(--gold));
+  margin: 1.5rem 0;
+  border-radius: 2px;
+}
+
+/* ═══════════════════════════════════════════
+   AD PLACEHOLDER
+═══════════════════════════════════════════ */
+.ad-slot {
+  background: var(--surface);
+  border: 1px dashed rgba(201,147,58,0.2);
+  border-radius: var(--r-md);
+  padding: 1rem;
+  text-align: center;
+  min-height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-dim);
+  font-size: 0.72rem;
+  font-family: var(--ff-mono);
+  letter-spacing: 0.05em;
+  max-width: 728px;
+  margin: 0 auto;
+}
+
+.ad-section {
+  padding: 2rem;
+  text-align: center;
+}
+
+/* ═══════════════════════════════════════════
+   SIGN CARDS (PANNEAUX)
+═══════════════════════════════════════════ */
+.sign-category {
+  margin-bottom: 3.5rem;
+}
+
+.cat-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.75rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.cat-badge {
+  padding: 0.3rem 0.9rem;
+  border-radius: 100px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.badge-danger  { background: rgba(185,28,28,0.15); color: #f87171; border: 1px solid rgba(185,28,28,0.3); }
+.badge-interdit{ background: rgba(185,28,28,0.15); color: #f87171; border: 1px solid rgba(185,28,28,0.3); }
+.badge-oblig   { background: rgba(37,99,235,0.15); color: #60a5fa; border: 1px solid rgba(37,99,235,0.3); }
+.badge-info    { background: rgba(201,147,58,0.12); color: var(--gold); border: 1px solid var(--border2); }
+
+.cat-title {
+  font-family: var(--ff-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text);
+}
+.cat-hint { font-size: 0.8rem; color: var(--text-dim); font-style: italic; margin-top: 2px; }
+
+.signs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1px;
+  background: var(--border);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.sign-card {
+  background: var(--surface);
+  padding: 1.75rem 1.5rem;
+  transition: background 0.25s, transform 0.25s;
+  position: relative;
+  overflow: hidden;
+  cursor: default;
+}
+
+.sign-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(201,147,58,0.04), transparent);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.sign-card:hover { background: var(--surface2); }
+.sign-card:hover::before { opacity: 1; }
+
+.sign-icon {
+  font-size: 2.8rem;
+  line-height: 1;
+  margin-bottom: 1rem;
+  display: block;
+  filter: drop-shadow(0 0 12px rgba(201,147,58,0.3));
+  transition: transform 0.3s, filter 0.3s;
+}
+.sign-card:hover .sign-icon {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 20px rgba(201,147,58,0.5));
+}
+
+.sign-name {
+  font-family: var(--ff-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+.sign-desc {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  font-weight: 300;
+}
+
+.sign-type {
+  position: absolute;
+  top: 1rem; right: 1rem;
+  width: 8px; height: 8px;
+  border-radius: 50%;
+}
+.type-danger  { background: var(--crimson-lt); box-shadow: 0 0 8px var(--crimson); }
+.type-interdit{ background: var(--crimson-lt); box-shadow: 0 0 8px var(--crimson); }
+.type-oblig   { background: #3b82f6; box-shadow: 0 0 8px #3b82f6; }
+.type-info    { background: var(--gold); box-shadow: 0 0 8px var(--gold); }
+
+/* MEMO TIP */
+.memo-tip {
+  margin-top: 1.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--gold);
+  border-radius: var(--r-md);
+  padding: 1.25rem 1.5rem;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0 1rem;
+  align-items: start;
+}
+.memo-tip .icon { font-size: 1.4rem; line-height: 1; margin-top: 2px; }
+.memo-tip h4 { font-family: var(--ff-display); font-size: 0.95rem; color: var(--gold-pale); margin-bottom: 0.5rem; }
+.memo-tip ul { padding-left: 1.2rem; }
+.memo-tip li { font-size: 0.84rem; color: var(--text-muted); margin-bottom: 0.3rem; line-height: 1.6; }
+.memo-tip li strong { color: var(--text); }
+
+/* ═══════════════════════════════════════════
+   PRIORITY SECTION
+═══════════════════════════════════════════ */
+.priority-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  background: var(--border);
+  border-radius: var(--r-xl);
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.priority-item {
+  background: var(--surface);
+  padding: 1.75rem 2rem;
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 1.5rem;
+  align-items: start;
+  transition: background 0.2s;
+  position: relative;
+}
+
+.priority-item::after {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: transparent;
+  transition: background 0.2s;
+}
+
+.priority-item:hover { background: var(--surface2); }
+.priority-item:hover::after { background: var(--gold); }
+
+.p-num {
+  width: 52px; height: 52px;
+  background: var(--surface3);
+  border: 1px solid var(--border2);
+  border-radius: var(--r-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--ff-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--gold);
+  flex-shrink: 0;
+}
+
+.p-body h3 {
+  font-family: var(--ff-display);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+.p-body p {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.75;
+  font-weight: 300;
+}
+
+/* ═══════════════════════════════════════════
+   SPEED SECTION
+═══════════════════════════════════════════ */
+.speed-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.speed-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.25s, transform 0.25s;
+}
+
+.speed-card:hover {
+  border-color: var(--border2);
+  transform: translateY(-2px);
+}
+
+.speed-card::before {
+  content: '';
+  position: absolute;
+  top: -40px; right: -40px;
+  width: 120px; height: 120px;
+  background: radial-gradient(circle, rgba(201,147,58,0.08), transparent 70%);
+  border-radius: 50%;
+}
+
+.speed-road {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 0.75rem;
+}
+
+.speed-val {
+  font-family: var(--ff-display);
+  font-size: 4.5rem;
+  font-weight: 700;
+  line-height: 1;
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-pale) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.speed-unit {
+  font-size: 1rem;
+  font-weight: 300;
+  color: var(--text-muted);
+  margin-left: 4px;
+  vertical-align: bottom;
+  -webkit-text-fill-color: var(--text-muted);
+}
+
+.speed-name {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-top: 0.5rem;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.speed-note {
+  margin-top: 0.75rem;
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  font-style: italic;
+}
+
+.speed-rain {
+  margin-top: 2rem;
+  background: var(--surface);
+  border: 1px solid rgba(96, 165, 250, 0.2);
+  border-radius: var(--r-md);
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.speed-rain .ico { font-size: 1.5rem; line-height: 1; flex-shrink: 0; }
+.speed-rain h4 { font-size: 0.88rem; font-weight: 600; color: #93c5fd; margin-bottom: 0.35rem; }
+.speed-rain p { font-size: 0.82rem; color: var(--text-muted); line-height: 1.6; font-weight: 300; }
+
+/* ═══════════════════════════════════════════
+   INFRACTION TABLE
+═══════════════════════════════════════════ */
+.fine-table-wrap {
+  border-radius: var(--r-xl);
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.fine-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.fine-table thead th {
+  background: var(--surface3);
+  color: var(--text-dim);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 1rem 1.5rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+
+.fine-table tbody tr {
+  background: var(--surface);
+  transition: background 0.15s;
+}
+.fine-table tbody tr:hover { background: var(--surface2); }
+.fine-table tbody tr + tr { border-top: 1px solid var(--border); }
+
+.fine-table td {
+  padding: 1rem 1.5rem;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  vertical-align: middle;
+}
+
+.fine-table td:first-child { color: var(--text); font-weight: 400; }
+
+.fine-amount {
+  font-family: var(--ff-mono);
+  font-weight: 500;
+  color: var(--gold-lt);
+  white-space: nowrap;
+}
+
+.sanction-tag {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.55rem;
+  border-radius: 4px;
+}
+.sanction-suspend { background: rgba(251,191,36,0.15); color: #fbbf24; border: 1px solid rgba(251,191,36,0.25); }
+.sanction-annul   { background: rgba(185,28,28,0.2); color: #f87171; border: 1px solid rgba(185,28,28,0.3); }
+.sanction-penal   { background: rgba(167,139,250,0.15); color: #a78bfa; border: 1px solid rgba(167,139,250,0.25); }
+.sanction-immo    { background: rgba(52,211,153,0.1); color: #6ee7b7; border: 1px solid rgba(52,211,153,0.2); }
+
+/* ═══════════════════════════════════════════
+   OBLIGATIONS GRID
+═══════════════════════════════════════════ */
+.oblig-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.oblig-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 1.75rem;
+  transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+  position: relative;
+  overflow: hidden;
+}
+
+.oblig-card:hover {
+  border-color: var(--border2);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.4), var(--glow-gold);
+}
+
+.oblig-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold), var(--crimson));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+.oblig-card:hover::after { transform: scaleX(1); }
+
+.oblig-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  display: block;
+  filter: drop-shadow(0 0 8px rgba(201,147,58,0.3));
+}
+
+.oblig-title {
+  font-family: var(--ff-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.6rem;
+}
+
+.oblig-desc {
+  font-size: 0.84rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+/* ═══════════════════════════════════════════
+   WARN / TIP BLOCKS
+═══════════════════════════════════════════ */
+.alert-box {
+  border-radius: var(--r-md);
+  padding: 1.5rem;
+  margin: 2rem 0;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1rem;
+  align-items: start;
+}
+
+.alert-warn {
+  background: rgba(185,28,28,0.07);
+  border: 1px solid rgba(185,28,28,0.2);
+  border-left: 3px solid var(--crimson);
+}
+
+.alert-tip {
+  background: rgba(16,185,129,0.05);
+  border: 1px solid rgba(16,185,129,0.15);
+  border-left: 3px solid var(--emerald-lt);
+}
+
+.alert-info {
+  background: rgba(201,147,58,0.06);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--gold);
+}
+
+.alert-box .a-icon { font-size: 1.4rem; line-height: 1; margin-top: 1px; }
+.alert-box h4 { font-family: var(--ff-display); font-size: 1rem; margin-bottom: 0.5rem; }
+.alert-warn h4 { color: #f87171; }
+.alert-tip  h4 { color: var(--emerald-lt); }
+.alert-info h4 { color: var(--gold); }
+.alert-box p  { font-size: 0.88rem; color: var(--text-muted); line-height: 1.75; font-weight: 300; }
+.alert-box ul { padding-left: 1.1rem; }
+.alert-box li { font-size: 0.86rem; color: var(--text-muted); margin-bottom: 0.35rem; line-height: 1.65; font-weight: 300; }
+.alert-box li strong { color: var(--text); font-weight: 500; }
+
+/* ═══════════════════════════════════════════
+   URGENCY PILLS
+═══════════════════════════════════════════ */
+.urgency-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.urgency-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  padding: 0.5rem 1.25rem;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  transition: border-color 0.2s, color 0.2s;
+}
+.urgency-pill .pill-num {
+  font-family: var(--ff-mono);
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--gold);
+}
+.urgency-pill:hover { border-color: var(--border2); color: var(--text); }
+
+/* ═══════════════════════════════════════════
+   EXAM SECTION
+═══════════════════════════════════════════ */
+.exam-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.exam-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 1.75rem;
+  transition: border-color 0.25s, transform 0.2s;
+  position: relative;
+}
+
+.exam-card:hover {
+  border-color: var(--border2);
+  transform: translateY(-2px);
+}
+
+.exam-card .e-num {
+  font-family: var(--ff-display);
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--surface3);
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.03em;
+}
+
+.exam-card h3 {
+  font-family: var(--ff-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.6rem;
+}
+
+.exam-card p {
+  font-size: 0.84rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+/* ── MOST IMPORTANT TOPICS ── */
+.topics-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.topic-item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+  padding: 0.85rem 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.84rem;
+  color: var(--text-muted);
+  transition: background 0.2s, color 0.2s;
+}
+
+.topic-item:hover { background: var(--surface2); color: var(--text); }
+.topic-item::before { content: '→'; color: var(--gold); font-size: 0.75rem; }
+
+/* ═══════════════════════════════════════════
+   SEARCH
+═══════════════════════════════════════════ */
+.search-section {
+  padding: 2rem;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 64px;
+  z-index: 100;
+  backdrop-filter: blur(20px);
+}
+
+.search-inner {
+  max-width: 700px;
+  margin: auto;
+  position: relative;
+}
+
+.search-icon {
+  position: absolute;
+  left: 1.2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-dim);
+  font-size: 1rem;
+  pointer-events: none;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.9rem 1.2rem 0.9rem 3rem;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: var(--r-xl);
+  color: var(--text);
+  font-family: var(--ff-body);
+  font-size: 0.92rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.search-input::placeholder { color: var(--text-dim); }
+.search-input:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(201,147,58,0.12);
+}
+
+/* ═══════════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════════ */
+footer {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.footer-logo {
+  font-family: var(--ff-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.01em;
+}
+
+.footer-tagline {
+  font-size: 0.82rem;
+  color: var(--text-dim);
+  margin-bottom: 0.5rem;
+  font-style: italic;
+}
+
+.footer-legal {
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  margin-top: 1rem;
+  font-weight: 300;
+}
+
+/* ── BACK TO TOP ── */
+.back-top {
+  position: fixed;
+  bottom: 2rem; right: 2rem;
+  width: 48px; height: 48px;
+  background: var(--surface2);
+  border: 1px solid var(--border2);
+  border-radius: 50%;
+  color: var(--gold);
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+.back-top:hover {
+  background: var(--surface3);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.5), var(--glow-gold);
+}
+
+/* ── REVEAL ANIMATION ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════ */
+@media (max-width: 900px) {
+  .speed-layout { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 720px) {
+  .nav-links { display: none; }
+  .nav-menu-btn { display: flex; align-items: center; gap: 6px; }
+  .speed-layout { grid-template-columns: 1fr; }
+  .hero-stats { gap: 2rem; }
+  .fine-table td, .fine-table th { padding: 0.75rem 1rem; font-size: 0.82rem; }
+  .priority-item { grid-template-columns: 44px 1fr; gap: 1rem; padding: 1.25rem 1.25rem; }
+  .hero { padding: 6rem 1.5rem 3rem; }
+  body { cursor: auto; }
+  .cursor, .cursor-ring { display: none; }
+}
+
+@media (max-width: 480px) {
+  .signs-grid { grid-template-columns: 1fr 1fr; }
+  .oblig-grid { grid-template-columns: 1fr; }
+  .exam-grid  { grid-template-columns: 1fr; }
+  .sign-card  { padding: 1.25rem 1rem; }
+}
+</style>
 </head>
 <body>
 
-<div class="progress-bar" id="progress"></div>
+<!-- CURSOR -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursor-ring"></div>
 
-<!-- ── HEADER ── -->
+<!-- PROGRESS -->
+<div id="progress"></div>
+
+<!-- ═══════════ HEADER ═══════════ -->
 <header>
   <div class="header-inner">
-    <div class="logo">
-      <div class="logo-flag">
-        <span class="r"></span>
-        <span class="g"></span>
-        <span class="r"></span>
+    <a class="logo" href="#">
+      <div class="logo-emblem">
+        <svg viewBox="0 0 40 40" fill="none">
+          <polygon points="20,2 38,38 2,38" fill="none" stroke="rgba(201,147,58,0.3)" stroke-width="1.5"/>
+          <circle cx="20" cy="22" r="8" fill="none" stroke="#c9933a" stroke-width="1.5"/>
+          <polygon points="20,6 37,36 3,36" fill="none" stroke="rgba(185,28,28,0.4)" stroke-width="0.75"/>
+          <circle cx="20" cy="22" r="3" fill="#c9933a" opacity="0.8"/>
+        </svg>
       </div>
-      Code de la Route Maroc
-    </div>
-    <button class="nav-toggle" onclick="toggleNav()">☰ Menu</button>
+      <div class="logo-text">
+        <span class="main">Code de la Route</span>
+        <span class="sub">Maroc — Guide Officiel</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#panneaux">Panneaux</a></li>
+      <li><a href="#priorite">Priorités</a></li>
+      <li><a href="#vitesses">Vitesses</a></li>
+      <li><a href="#infractions">Amendes</a></li>
+      <li><a href="#obligations">Obligations</a></li>
+      <li><a href="#examen">Examen</a></li>
+    </ul>
+    <button class="nav-menu-btn" onclick="toggleMobileNav()" id="menu-btn">☰ Menu</button>
   </div>
 </header>
 
-<!-- ── NAVIGATION ── -->
-<nav id="main-nav">
-  <div class="nav-inner">
-    <a href="#panneaux">🚧 Panneaux</a>
-    <a href="#priorite">⚡ Priorités</a>
-    <a href="#vitesses">🚗 Vitesses</a>
-    <a href="#alcool">🍷 Alcool</a>
-    <a href="#infractions">⚠️ Infractions</a>
-    <a href="#obligations">✅ Obligations</a>
-    <a href="#nuit">🌙 Conduite Nuit</a>
-    <a href="#examen">🎓 Examen</a>
-  </div>
-</nav>
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobile-nav">
+  <a href="#panneaux" onclick="closeMobileNav()">🚧 &nbsp; Panneaux de signalisation</a>
+  <a href="#priorite" onclick="closeMobileNav()">⚡ &nbsp; Règles de priorité</a>
+  <a href="#vitesses" onclick="closeMobileNav()">🚗 &nbsp; Limitations de vitesse</a>
+  <a href="#alcool"   onclick="closeMobileNav()">🍷 &nbsp; Alcool & drogues</a>
+  <a href="#infractions" onclick="closeMobileNav()">⚠️ &nbsp; Infractions & amendes</a>
+  <a href="#obligations" onclick="closeMobileNav()">✅ &nbsp; Obligations du conducteur</a>
+  <a href="#nuit"     onclick="closeMobileNav()">🌙 &nbsp; Conduite de nuit</a>
+  <a href="#examen"   onclick="closeMobileNav()">🎓 &nbsp; Conseils examen</a>
+</div>
 
-<!-- ── HERO ── -->
-<div class="hero">
-  <h1>Code de la Route<br/><span>Maroc</span></h1>
-  <p>Le guide complet pour réussir votre examen du permis de conduire. Tout en un seul endroit, gratuit.</p>
+<!-- ═══════════ HERO ═══════════ -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="zellige-bg"></div>
+  <div class="hero-ring"></div>
+  <div class="hero-ring"></div>
+  <div class="hero-ring"></div>
+
+  <span class="hero-eyebrow">Guide complet 2024 — Maroc</span>
+
+  <h1 class="hero-title">
+    <span class="line1">Code de</span>
+    <span class="line2">la Route</span>
+    <span class="line3">Préparez votre permis de conduire</span>
+  </h1>
+
+  <p class="hero-desc">
+    Panneaux, priorités, vitesses, infractions — tout ce qu'il faut savoir pour réussir l'examen du permis marocain, présenté clairement et gratuitement.
+  </p>
+
   <div class="hero-stats">
-    <div class="stat"><strong>8</strong><span>Chapitres</span></div>
-    <div class="stat"><strong>60+</strong><span>Panneaux</span></div>
-    <div class="stat"><strong>100%</strong><span>Gratuit</span></div>
+    <div class="hero-stat">
+      <div class="num">60+</div>
+      <div class="lbl">Panneaux expliqués</div>
+    </div>
+    <div class="hero-stat">
+      <div class="num">8</div>
+      <div class="lbl">Chapitres complets</div>
+    </div>
+    <div class="hero-stat">
+      <div class="num">100%</div>
+      <div class="lbl">Gratuit</div>
+    </div>
+  </div>
+
+  <div class="scroll-hint">
+    <span>Défiler</span>
+    <div class="line"></div>
+  </div>
+</section>
+
+<!-- AD TOP -->
+<div class="ad-section" style="background:var(--surface);border-bottom:1px solid var(--border);">
+  <!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXX" data-ad-slot="XXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
+  <div class="ad-slot">[ ADSENSE 728×90 — Leaderboard — activez après approbation ]</div>
+</div>
+
+<!-- SEARCH -->
+<div class="search-section">
+  <div class="search-inner">
+    <span class="search-icon">🔍</span>
+    <input class="search-input" type="text" placeholder="Rechercher un panneau, une règle, une amende..." oninput="searchContent(this.value)" autocomplete="off"/>
   </div>
 </div>
 
-<!-- ── SEARCH ── -->
-<div class="search-wrap">
-  <input class="search-input" type="text" placeholder="🔍  Rechercher un panneau, une règle..." oninput="searchContent(this.value)" />
-</div>
-
-<!-- ── TOP AD BANNER ── -->
-<div class="ad-banner" style="margin-top:1.5rem;">
-  <!-- Google AdSense — Leaderboard 728x90
-  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXX" data-ad-slot="XXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
-  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-  -->
-  <div class="ad-placeholder">[ Annonce Google AdSense — 728×90 — Remplacez ce bloc par votre code AdSense ]</div>
-</div>
-
-<!-- ══════════════════════════════════════════════════════════
+<!-- ═══════════════════════════════════════════
      MAIN CONTENT
-═══════════════════════════════════════════════════════════ -->
-<main id="main-content">
+═══════════════════════════════════════════ -->
+<div class="page-wrap">
 
-  <!-- ══════════════════════════════════
-       1. PANNEAUX DE SIGNALISATION
-  ═══════════════════════════════════ -->
-  <section class="section" id="panneaux">
-    <div class="section-header">
-      <div class="section-icon icon-red">🚧</div>
-      <div>
-        <div class="section-title">Panneaux de Signalisation</div>
-        <div class="section-subtitle">Reconnaissance et signification de chaque panneau</div>
-      </div>
-    </div>
-
-    <!-- Danger -->
-    <div class="info-block">
-      <h3>⚠️ Panneaux de Danger — <small style="color:var(--muted);font-size:0.8rem;">Forme triangulaire, fond blanc, liseré rouge</small></h3>
-      <div class="card-grid">
-
-        <div class="card">
-          <span class="card-label label-red">⚠️ Danger</span>
-          <span class="sign-symbol">🔺</span>
-          <h3>Virage à droite / gauche</h3>
-          <p>Annonce un virage dangereux dans la direction indiquée. Réduire la vitesse et se tenir prêt à manœuvrer.</p>
-        </div>
-
-        <div class="card">
-          <span class="card-label label-red">⚠️ Danger</span>
-          <span class="sign-symbol">⛰️</span>
-          <h3>Descente dangereuse</h3>
-          <p>Pente raide à venir. Passer en vitesse réduite, ne pas couper le moteur, éviter le point mort.</p>
-        </div>
-
-        <div class="card">
-          <span class="card-label label-red">⚠️ Danger</span>
-          <span class="sign-symbol">🛤️</span>
-          <h3>Passage à niveau</h3>
-          <p>Croisement avec une voie ferrée. Marquez l'arrêt obligatoire si la barrière est baissée ou si le signal sonore retentit.</p>
-        </div>
-
-        <div class="card">
-          <span class="card-label label-red">⚠️ Danger</span>
-          <span class="sign-symbol">🚧</span>
-          <h3>Travaux</h3>
-          <p>Chantier sur la chaussée. Réduire la vitesse, respecter la signalisation temporaire et les agents.</p>
-        </div>
-
-        <div class="card">
-          <span class="card-label label-red">⚠️ Danger</span>
-          <span class="sign-symbol">🏃</span>
-          <h3>Passage de piétons</h3>
-          <p>Piétons pouvant traverser. Ralentir et céder le passage aux personnes sur le passage clouté.</p>
-        </div>
-
-        <div class="card">
-          <span class="card-label label-red">⚠️ Danger</span>
-          <span class="sign-symbol">🚸</span>
-          <h3>Enfants — École</h3>
-          <p>Zone scolaire. Vigilance maximale, vitesse très réduite, prêt à s'arrêter à tout moment.</p>
-        </div>
-
-        <div class="card">
-          <span class="card-label label-red">⚠️ Danger</span>
-          <span class="sign-symbol">🌊</span>
-          <h3>Route inondable</h3>
-          <p>Risque de submersion en cas de pluies. Ne pas s'engager si la route est recouverte d'eau.</p>
-        </div>
-
-        <div class="card">
-          <span class="card-label label-red">⚠️ Danger</span>
-          <span class="sign-symbol">🐄</span>
-          <h3>Animaux domestiques</h3>
-          <p>Troupeaux pouvant traverser la route. Courant surtout en zones rurales marocaines.</p>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- Interdiction -->
-    <div class="info-block" style="margin-top:1.5rem;">
-      <h3>🔴 Panneaux d'Interdiction — <small style="color:var(--muted);font-size:0.8rem;">Forme ronde, fond blanc, liseré rouge</small></h3>
-      <div class="card-grid">
-
-        <div class="card">
-          <span class="card-label label-red">🚫 Interdit</span>
-          <span class="sign-symbol">🔴</span>
-          <h3>Sens interdit</h3>
-          <p>Accès totalement interdit dans cette direction. Panneau blanc horizontal sur fond rouge. Ne jamais passer.</p>
-        </div>
-
-        <div class="card">
-          <span class="card-label label-red">🚫 Interdit</span>
-          <span class="sign-symbol">⛔</span>
-          <h3>Stop</h3>
-          <p>Arrêt ABSOLU et COMPLET obligatoire avant la ligne. Même en l'absence de tout véhicule.</p>
-        </div>
-
-        <div class="card">
-          <span class="card-label label-red">🚫 Interdit</span>
-          <span class="sign-symbol">🚫</span>
-          <h3>Circulation interdite</h3>
-          <p>Interdit à tout véhicule dans les deux sens. Panneau circulaire rouge plein.</p>
-        </div>
-
-        <div class="card">
-          <span class="card-label label-red">🚫 Interdit</span>
-          <span class="sign-symbol">🚗💨</span>
-          <h3>Dépassement interdit</h3>
-          <p>Interdiction de dépasser tout véhicule à moteur. La ligne discontinue seule ne suffit pas.</p>
-        </div>
-
-        <div class="card">
-          <span class="card-label label-red">🚫 Interdit</span>
-          <span class="sign-symbol">📯</span>
-          <h3>Klaxon interdit</h3>
-          <p>Usage du signal sonore interdit sauf danger immédiat. Zone silencieuse (hôpital, école...)</p>
-        </div>
-
-        <div class="card">
-          <span class="card-label label-red">🚫 Interdit</span>
-          <span class="sign-symbol">🅿️❌</span>
-          <h3>Stationnement interdit</h3>
-          <p>Arrêt et stationnement interdits. Différent du simple "arrêt interdit" qui est plus restrictif.</p>
-        </div>
-
-        <div class="card">
-          <span class="card-label label-red">🚫 Interdit</span>
-          <span class="sign-symbol">↩️❌</span>
-          <h3>Demi-tour interdit</h3>
-          <p>Manœuvre de demi-tour interdite à cet endroit. Chercher un autre carrefour.</p>
-        </div>
-
-        <div class="card">
-          <span class="card-label label-red">🚫 Interdit</span>
-          <span class="sign-symbol">🚛❌</span>
-          <h3>Interdit aux poids lourds</h3>
-          <p>Accès interdit aux véhicules dont le poids total dépasse le tonnage indiqué sur le panneau.</p>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- Obligation -->
-    <div class="info-block" style="margin-top:1.5rem;">
-      <h3>🔵 Panneaux d'Obligation — <small style="color:var(--muted);font-size:0.8rem;">Forme ronde, fond bleu</small></h3>
-      <div class="card-grid">
-
-        <div class="card">
-          <span class="card-label label-blue">🔵 Obligation</span>
-          <span class="sign-symbol">➡️</span>
-          <h3>Direction obligatoire</h3>
-          <p>Indique la direction que vous devez impérativement suivre : tout droit, à droite, à gauche, etc.</p>
-        </div>
-
-        <div class="card">
-          <span class="card-label label-blue">🔵 Obligation</span>
-          <span class="sign-symbol">🔵🔄</span>
-          <h3>Rond-point obligatoire</h3>
-          <p>Sens giratoire. Vous devez tourner dans le sens indiqué (anti-horaire au Maroc).</p>
-        </div>
-
-        <div class="card">
-          <span class="card-label label-blue">🔵 Obligation</span>
-          <span class="sign-symbol">🚴</span>
-          <h3>Piste cyclable obligatoire</h3>
-          <p>Réservé aux vélos. Les autres véhicules sont interdits sur cette voie.</p>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- Indication -->
-    <div class="info-block" style="margin-top:1.5rem;">
-      <h3>🟦 Panneaux d'Indication — <small style="color:var(--muted);font-size:0.8rem;">Forme rectangulaire ou carrée, fond bleu ou vert</small></h3>
-      <div class="card-grid">
-
-        <div class="card">
-          <span class="card-label label-blue">🟦 Indication</span>
-          <span class="sign-symbol">🏙️</span>
-          <h3>Entrée d'agglomération</h3>
-          <p>Nom de la ville sur fond blanc. À partir de ce panneau, la limite de vitesse est <strong>60 km/h</strong> sauf indication contraire.</p>
-        </div>
-
-        <div class="card">
-          <span class="card-label label-blue">🟦 Indication</span>
-          <span class="sign-symbol">🛣️</span>
-          <h3>Autoroute</h3>
-          <p>Début de section autoroutière. Règles spéciales : vitesse max 120 km/h, interdiction aux piétons et cyclistes.</p>
-        </div>
-
-        <div class="card">
-          <span class="card-label label-blue">🟦 Indication</span>
-          <span class="sign-symbol">⛽</span>
-          <h3>Station-service</h3>
-          <p>Indique la présence d'une station d'essence. Souvent accompagné de la distance.</p>
-        </div>
-
-        <div class="card">
-          <span class="card-label label-blue">🟦 Indication</span>
-          <span class="sign-symbol">🏥</span>
-          <h3>Hôpital / Premiers secours</h3>
-          <p>Proximité d'un établissement de soins. Klaxon et vitesse réduits obligatoires.</p>
-        </div>
-
-      </div>
-    </div>
-
-    <div class="tip-box">
-      <h4>💡 Astuce mémorisation panneaux</h4>
-      <ul>
-        <li><strong>Triangle rouge</strong> = Danger (attention, risque devant vous)</li>
-        <li><strong>Rond rouge</strong> = Interdit (quelque chose est défendu)</li>
-        <li><strong>Rond bleu</strong> = Obligation (vous devez faire quelque chose)</li>
-        <li><strong>Rectangle/carré bleu ou vert</strong> = Information / Indication</li>
-      </ul>
-    </div>
-
-  </section>
-
-  <!-- ── MID AD ── -->
-  <div class="ad-mid">
-    <!-- Google AdSense — Rectangle 300x250
-    <ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-XXXXXXXX" data-ad-slot="XXXXXXXX"></ins>
-    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-    -->
-    <div class="ad-placeholder" style="max-width:300px;min-height:250px;margin:auto;">[ AdSense 300×250 ]</div>
+<!-- ═══════════ PANNEAUX ═══════════ -->
+<section class="section reveal" id="panneaux">
+  <div class="section-head">
+    <div class="section-tag">Chapitre 01</div>
+    <h2 class="section-title">Panneaux de<br/><em>Signalisation</em></h2>
+    <div class="divider"></div>
+    <p class="section-desc">Identifier et mémoriser chaque panneau par sa forme, sa couleur et sa signification précise.</p>
   </div>
 
-  <!-- ══════════════════════════════════
-       2. RÈGLES DE PRIORITÉ
-  ═══════════════════════════════════ -->
-  <section class="section" id="priorite">
-    <div class="section-header">
-      <div class="section-icon icon-amber">⚡</div>
+  <!-- DANGER -->
+  <div class="sign-category">
+    <div class="cat-header">
+      <span class="cat-badge badge-danger">⚠️ Danger</span>
       <div>
-        <div class="section-title">Règles de Priorité</div>
-        <div class="section-subtitle">Qui passe en premier ? Les règles absolues</div>
+        <div class="cat-title">Panneaux de Danger</div>
+        <div class="cat-hint">Triangle à fond blanc, liseré rouge — annonce un danger devant vous</div>
       </div>
     </div>
+    <div class="signs-grid">
+      <div class="sign-card"><div class="sign-type type-danger"></div><span class="sign-icon">🔺</span><div class="sign-name">Virage dangereux</div><div class="sign-desc">Virage serré à droite ou à gauche. Réduire la vitesse, rester sur sa voie.</div></div>
+      <div class="sign-card"><div class="sign-type type-danger"></div><span class="sign-icon">⛰️</span><div class="sign-name">Descente dangereuse</div><div class="sign-desc">Forte pente. Passer en vitesse réduite, ne jamais mettre au point mort.</div></div>
+      <div class="sign-card"><div class="sign-type type-danger"></div><span class="sign-icon">🛤️</span><div class="sign-name">Passage à niveau</div><div class="sign-desc">Croisement voie ferrée. Arrêt obligatoire si barrière baissée ou signal sonore.</div></div>
+      <div class="sign-card"><div class="sign-type type-danger"></div><span class="sign-icon">🚧</span><div class="sign-name">Travaux</div><div class="sign-desc">Chantier sur ou près de la chaussée. Réduire la vitesse, suivre la signalisation temporaire.</div></div>
+      <div class="sign-card"><div class="sign-type type-danger"></div><span class="sign-icon">🏃</span><div class="sign-name">Passage de piétons</div><div class="sign-desc">Traversée piétonne. Ralentir et céder le passage aux personnes sur le passage clouté.</div></div>
+      <div class="sign-card"><div class="sign-type type-danger"></div><span class="sign-icon">🚸</span><div class="sign-name">Enfants — Zone scolaire</div><div class="sign-desc">Aux abords d'une école. Vitesse très réduite, vigilance maximale, prêt à s'arrêter.</div></div>
+      <div class="sign-card"><div class="sign-type type-danger"></div><span class="sign-icon">🌊</span><div class="sign-name">Route inondable</div><div class="sign-desc">Risque de submersion après pluies. Ne pas s'engager si la route est sous eau.</div></div>
+      <div class="sign-card"><div class="sign-type type-danger"></div><span class="sign-icon">🐄</span><div class="sign-name">Animaux sur la route</div><div class="sign-desc">Troupeaux pouvant traverser. Fréquent en zones rurales et montagneuses au Maroc.</div></div>
+    </div>
+  </div>
 
-    <div class="priority-card">
-      <div class="priority-num">1</div>
+  <!-- INTERDICTION -->
+  <div class="sign-category">
+    <div class="cat-header">
+      <span class="cat-badge badge-interdit">🚫 Interdiction</span>
       <div>
-        <h3>Véhicules prioritaires absolus</h3>
-        <p>Ambulances, pompiers, police et gendarmerie avec gyrophares et sirènes actifs. Vous devez vous ranger immédiatement sur le côté droit et vous arrêter, même en cas de feu vert.</p>
+        <div class="cat-title">Panneaux d'Interdiction</div>
+        <div class="cat-hint">Rond à fond blanc, liseré rouge — quelque chose est strictement interdit</div>
       </div>
     </div>
+    <div class="signs-grid">
+      <div class="sign-card"><div class="sign-type type-interdit"></div><span class="sign-icon">🔴</span><div class="sign-name">Sens interdit</div><div class="sign-desc">Barre blanche sur fond rouge. Accès totalement interdit dans cette direction, sans exception.</div></div>
+      <div class="sign-card"><div class="sign-type type-interdit"></div><span class="sign-icon">⛔</span><div class="sign-name">STOP — Arrêt absolu</div><div class="sign-desc">Arrêt COMPLET obligatoire avant la ligne. Même si aucun véhicule n'est visible.</div></div>
+      <div class="sign-card"><div class="sign-type type-interdit"></div><span class="sign-icon">🚫</span><div class="sign-name">Circulation interdite</div><div class="sign-desc">Interdit à tout véhicule dans les deux sens. Panneau rouge plein circulaire.</div></div>
+      <div class="sign-card"><div class="sign-type type-interdit"></div><span class="sign-icon">💨</span><div class="sign-name">Dépassement interdit</div><div class="sign-desc">Interdiction de dépasser tout véhicule à moteur. La ligne discontinue ne donne pas ce droit.</div></div>
+      <div class="sign-card"><div class="sign-type type-interdit"></div><span class="sign-icon">📯</span><div class="sign-name">Klaxon interdit</div><div class="sign-desc">Usage du signal sonore interdit sauf danger immédiat. Zone calme (hôpital, école...).</div></div>
+      <div class="sign-card"><div class="sign-type type-interdit"></div><span class="sign-icon">🅿️</span><div class="sign-name">Stationnement interdit</div><div class="sign-desc">Arrêt et stationnement interdits. Différent de "arrêt interdit" qui est encore plus restrictif.</div></div>
+      <div class="sign-card"><div class="sign-type type-interdit"></div><span class="sign-icon">↩️</span><div class="sign-name">Demi-tour interdit</div><div class="sign-desc">Manœuvre de demi-tour interdite à cet endroit précis. Chercher un autre carrefour.</div></div>
+      <div class="sign-card"><div class="sign-type type-interdit"></div><span class="sign-icon">🚛</span><div class="sign-name">Interdit aux poids lourds</div><div class="sign-desc">Accès interdit si le poids total dépasse le tonnage indiqué en chiffre sur le panneau.</div></div>
+    </div>
+  </div>
 
-    <div class="priority-card">
-      <div class="priority-num">2</div>
+  <!-- OBLIGATION -->
+  <div class="sign-category">
+    <div class="cat-header">
+      <span class="cat-badge badge-oblig">🔵 Obligation</span>
       <div>
-        <h3>Panneau STOP (Arrêt absolu obligatoire)</h3>
-        <p>Arrêt complet obligatoire avant la ligne, même si la voie est libre. Priorité absolue aux véhicules sur la voie principale. La voiture qui n'a pas le Stop passe en premier.</p>
+        <div class="cat-title">Panneaux d'Obligation</div>
+        <div class="cat-hint">Rond bleu — vous devez impérativement faire quelque chose</div>
       </div>
     </div>
+    <div class="signs-grid">
+      <div class="sign-card"><div class="sign-type type-oblig"></div><span class="sign-icon">➡️</span><div class="sign-name">Direction obligatoire</div><div class="sign-desc">Vous devez suivre la direction indiquée par la flèche : tout droit, droite, gauche, etc.</div></div>
+      <div class="sign-card"><div class="sign-type type-oblig"></div><span class="sign-icon">🔵</span><div class="sign-name">Rond-point obligatoire</div><div class="sign-desc">Sens giratoire. Tournez dans le sens indiqué. Au Maroc : priorité à ceux déjà dans le rond-point.</div></div>
+      <div class="sign-card"><div class="sign-type type-oblig"></div><span class="sign-icon">🚴</span><div class="sign-name">Piste cyclable</div><div class="sign-desc">Voie réservée aux vélos. Les voitures et motos sont interdites sur cette piste.</div></div>
+      <div class="sign-card"><div class="sign-type type-oblig"></div><span class="sign-icon">🔆</span><div class="sign-name">Feux allumés obligatoires</div><div class="sign-desc">Allumez vos feux de croisement même en plein jour dans cette zone (tunnel, brouillard...).</div></div>
+    </div>
+  </div>
 
-    <div class="priority-card">
-      <div class="priority-num">3</div>
+  <!-- INDICATION -->
+  <div class="sign-category">
+    <div class="cat-header">
+      <span class="cat-badge badge-info">🟦 Indication</span>
       <div>
-        <h3>Cédez le passage (triangle pointé vers le bas)</h3>
-        <p>Vous devez laisser passer les véhicules venant de la route principale. L'arrêt n'est pas obligatoire si la visibilité est bonne et qu'aucun véhicule n'arrive.</p>
+        <div class="cat-title">Panneaux d'Indication</div>
+        <div class="cat-hint">Rectangle/carré bleu ou vert — donne une information utile</div>
       </div>
     </div>
+    <div class="signs-grid">
+      <div class="sign-card"><div class="sign-type type-info"></div><span class="sign-icon">🏙️</span><div class="sign-name">Entrée d'agglomération</div><div class="sign-desc">Nom de la ville sur fond blanc. Limite de vitesse immédiate : 60 km/h sauf panneau contraire.</div></div>
+      <div class="sign-card"><div class="sign-type type-info"></div><span class="sign-icon">🛣️</span><div class="sign-name">Autoroute</div><div class="sign-desc">Début de section autoroutière. Vitesse max 120 km/h. Interdit aux piétons et cyclistes.</div></div>
+      <div class="sign-card"><div class="sign-type type-info"></div><span class="sign-icon">⛽</span><div class="sign-name">Station-service</div><div class="sign-desc">Indique la présence d'une station d'essence à proximité ou à la distance indiquée.</div></div>
+      <div class="sign-card"><div class="sign-type type-info"></div><span class="sign-icon">🏥</span><div class="sign-name">Hôpital / Urgences</div><div class="sign-desc">Proximité d'un hôpital. Réduire vitesse et bruit, pas de klaxon inutile dans ce secteur.</div></div>
+    </div>
+  </div>
 
-    <div class="priority-card">
-      <div class="priority-num">4</div>
-      <div>
-        <h3>Priorité à droite (règle générale)</h3>
-        <p>En l'absence de tout panneau, tout véhicule venant de votre droite est prioritaire. Cette règle s'applique dans les carrefours ordinaires sans signalisation.</p>
+  <div class="memo-tip">
+    <span class="icon">💡</span>
+    <div>
+      <h4>Méthode de mémorisation des panneaux</h4>
+      <ul>
+        <li><strong>Triangle rouge</strong> = Danger (un risque vous attend devant)</li>
+        <li><strong>Rond rouge</strong> = Interdit (quelque chose est défendu, ne le faites pas)</li>
+        <li><strong>Rond bleu</strong> = Obligation (vous DEVEZ faire ce qui est indiqué)</li>
+        <li><strong>Rectangle bleu / vert</strong> = Information ou indication de service</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- AD MID 1 -->
+<div class="ad-section">
+  <!-- <ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-XXXXXXXX" data-ad-slot="XXXXXXXX"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
+  <div class="ad-slot" style="max-width:300px;min-height:250px;">[ ADSENSE 300×250 — Rectangle — activez après approbation ]</div>
+</div>
+
+<!-- ═══════════ PRIORITÉ ═══════════ -->
+<section class="section reveal" id="priorite">
+  <div class="section-head">
+    <div class="section-tag">Chapitre 02</div>
+    <h2 class="section-title">Règles de<br/><em>Priorité</em></h2>
+    <div class="divider"></div>
+    <p class="section-desc">Qui passe en premier ? L'ordre de priorité est absolu et non négociable.</p>
+  </div>
+
+  <div class="priority-list">
+    <div class="priority-item">
+      <div class="p-num">1</div>
+      <div class="p-body">
+        <h3>Véhicules d'urgence en intervention</h3>
+        <p>Ambulances, pompiers, police et gendarmerie avec gyrophares et sirènes actifs. Rangez-vous immédiatement à droite et arrêtez-vous. Priorité absolue, même au feu vert.</p>
       </div>
     </div>
-
-    <div class="priority-card">
-      <div class="priority-num">5</div>
-      <div>
-        <h3>Rond-point (sens giratoire)</h3>
-        <p>Au Maroc, les véhicules <strong>déjà engagés dans le rond-point sont prioritaires</strong>. Ceux qui veulent entrer doivent céder le passage. Regardez le panneau "Cédez le passage" à l'entrée.</p>
-      </div>
-    </div>
-
-    <div class="priority-card">
-      <div class="priority-num">6</div>
-      <div>
-        <h3>Voie principale vs route secondaire</h3>
-        <p>La route balisée avec un panneau "Route à grande circulation" (losange jaune) est prioritaire. Les routes secondaires doivent toujours céder le passage à la voie principale.</p>
-      </div>
-    </div>
-
-    <div class="priority-card">
-      <div class="priority-num">7</div>
-      <div>
-        <h3>Feux de signalisation</h3>
-        <p><strong>Vert</strong> = Vous pouvez avancer (avec prudence). <strong>Orange/Jaune</strong> = Arrêtez-vous si vous le pouvez, ne forcez pas. <strong>Rouge</strong> = Arrêt obligatoire.</p>
-      </div>
-    </div>
-
-    <div class="priority-card">
-      <div class="priority-num">8</div>
-      <div>
+    <div class="priority-item">
+      <div class="p-num">2</div>
+      <div class="p-body">
         <h3>Agent de la circulation</h3>
-        <p>Les instructions de l'agent sont prioritaires sur tout panneau ou feu de signalisation. Obéissez toujours à l'agent.</p>
+        <p>Ses gestes priment sur TOUT : panneaux, feux de signalisation, et même le feu vert. Obéissez toujours à l'agent en priorité.</p>
       </div>
     </div>
-
-    <div class="warn-box">
-      <h4>⚠️ Erreurs fréquentes à l'examen</h4>
-      <p>Beaucoup de candidats oublient que <strong>l'agent de la circulation prime sur le feu vert</strong>, et que dans un rond-point, c'est celui <em>déjà engagé</em> qui est prioritaire, pas celui qui entre.</p>
-    </div>
-
-  </section>
-
-  <!-- ══════════════════════════════════
-       3. LIMITATIONS DE VITESSE
-  ═══════════════════════════════════ -->
-  <section class="section" id="vitesses">
-    <div class="section-header">
-      <div class="section-icon icon-blue">🚗</div>
-      <div>
-        <div class="section-title">Limitations de Vitesse</div>
-        <div class="section-subtitle">Vitesses maximales autorisées au Maroc</div>
+    <div class="priority-item">
+      <div class="p-num">3</div>
+      <div class="p-body">
+        <h3>Panneau STOP</h3>
+        <p>Arrêt complet et obligatoire avant la ligne d'arrêt. La voiture sur la route principale passe en premier. L'arrêt est requis même si la route semble libre.</p>
       </div>
     </div>
-
-    <table class="speed-table">
-      <thead>
-        <tr>
-          <th>Type de voie</th>
-          <th>Voiture / Moto</th>
-          <th>Poids lourd &gt; 3,5t</th>
-          <th>Bus / Car</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Autoroute</strong></td>
-          <td><span class="speed-badge">120</span> km/h</td>
-          <td><span class="speed-badge">100</span> km/h</td>
-          <td><span class="speed-badge">100</span> km/h</td>
-        </tr>
-        <tr>
-          <td><strong>Route nationale hors agglo.</strong></td>
-          <td><span class="speed-badge">100</span> km/h</td>
-          <td><span class="speed-badge">80</span> km/h</td>
-          <td><span class="speed-badge">80</span> km/h</td>
-        </tr>
-        <tr>
-          <td><strong>Route secondaire hors agglo.</strong></td>
-          <td><span class="speed-badge">80</span> km/h</td>
-          <td><span class="speed-badge">70</span> km/h</td>
-          <td><span class="speed-badge">70</span> km/h</td>
-        </tr>
-        <tr>
-          <td><strong>Agglomération (ville)</strong></td>
-          <td><span class="speed-badge">60</span> km/h</td>
-          <td><span class="speed-badge">60</span> km/h</td>
-          <td><span class="speed-badge">60</span> km/h</td>
-        </tr>
-        <tr>
-          <td><strong>Zone 30 / scolaire</strong></td>
-          <td><span class="speed-badge">30</span> km/h</td>
-          <td><span class="speed-badge">30</span> km/h</td>
-          <td><span class="speed-badge">30</span> km/h</td>
-        </tr>
-        <tr>
-          <td><strong>Zone piétonne / résidentielle</strong></td>
-          <td><span class="speed-badge">20</span> km/h</td>
-          <td><span class="speed-badge">20</span> km/h</td>
-          <td><span class="speed-badge">20</span> km/h</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <div class="tip-box" style="margin-top:1.5rem;">
-      <h4>💡 Règles de vitesse à retenir</h4>
-      <ul>
-        <li>En cas de pluie ou mauvaise visibilité : réduire la vitesse de <strong>20 km/h</strong> par rapport au maximum affiché.</li>
-        <li>Un panneau de limitation locale (panneau rond rouge avec chiffre) <strong>annule la limitation générale</strong> et s'applique immédiatement.</li>
-        <li>La fin de limitation est indiquée par un panneau barré ou par un panneau d'entrée/sortie d'agglomération.</li>
-        <li>Vitesse minimale sur autoroute (voie rapide) : <strong>60 km/h</strong> — rouler trop lentement est aussi une infraction.</li>
-      </ul>
+    <div class="priority-item">
+      <div class="p-num">4</div>
+      <div class="p-body">
+        <h3>Cédez le passage (triangle inversé)</h3>
+        <p>Laisser passer les véhicules de la voie principale. L'arrêt n'est pas obligatoire si la visibilité est bonne et qu'aucun véhicule n'approche.</p>
+      </div>
     </div>
-
-  </section>
-
-  <!-- ── MID AD 2 ── -->
-  <div class="ad-mid">
-    <!-- AdSense responsive
-    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXX" data-ad-slot="XXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
-    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-    -->
-    <div class="ad-placeholder" style="max-width:728px;margin:auto;">[ AdSense 728×90 ]</div>
+    <div class="priority-item">
+      <div class="p-num">5</div>
+      <div class="p-body">
+        <h3>Feux de signalisation</h3>
+        <p><strong>Vert</strong> : avancez avec prudence. <strong>Orange/Jaune</strong> : arrêtez-vous si vous le pouvez, ne forcez pas le passage. <strong>Rouge</strong> : arrêt total obligatoire.</p>
+      </div>
+    </div>
+    <div class="priority-item">
+      <div class="p-num">6</div>
+      <div class="p-body">
+        <h3>Priorité à droite (règle générale)</h3>
+        <p>En l'absence de tout panneau de signalisation, tout véhicule venant de votre droite est prioritaire. Cette règle s'applique dans les carrefours ordinaires sans signalisation.</p>
+      </div>
+    </div>
+    <div class="priority-item">
+      <div class="p-num">7</div>
+      <div class="p-body">
+        <h3>Rond-point (sens giratoire)</h3>
+        <p>Au Maroc, les véhicules <strong>déjà engagés dans le giratoire</strong> sont prioritaires. Ceux qui veulent entrer doivent céder le passage. Panneau "Cédez le passage" à l'entrée.</p>
+      </div>
+    </div>
+    <div class="priority-item">
+      <div class="p-num">8</div>
+      <div class="p-body">
+        <h3>Route principale vs route secondaire</h3>
+        <p>La route balisée par le losange jaune "Route à grande circulation" est toujours prioritaire. Les routes secondaires doivent systématiquement céder le passage.</p>
+      </div>
+    </div>
   </div>
 
-  <!-- ══════════════════════════════════
-       4. ALCOOL & DROGUES
-  ═══════════════════════════════════ -->
-  <section class="section" id="alcool">
-    <div class="section-header">
-      <div class="section-icon icon-red">🍷</div>
-      <div>
-        <div class="section-title">Alcool, Drogues & Conduite</div>
-        <div class="section-subtitle">Taux légaux et conséquences au Maroc</div>
-      </div>
+  <div class="alert-box alert-warn" style="margin-top:2rem;">
+    <span class="a-icon">⚠️</span>
+    <div>
+      <h4>Erreur classique à l'examen</h4>
+      <p>Beaucoup de candidats répondent "le feu vert" quand la bonne réponse est "l'agent de la circulation". L'agent prime sur tout, y compris sur le feu vert. Mémorisez cet ordre impérativement.</p>
     </div>
+  </div>
+</section>
 
-    <div class="info-block">
-      <h3>📊 Taux d'alcoolémie autorisés</h3>
-      <table class="speed-table" style="margin-top:0.75rem;">
-        <thead>
-          <tr><th>Conducteur</th><th>Taux sanguin</th><th>Taux air expiré</th></tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>Conducteur ordinaire</strong></td>
-            <td><span class="speed-badge" style="background:var(--green);">0,20 g/l</span></td>
-            <td>0,10 mg/l</td>
-          </tr>
-          <tr>
-            <td><strong>Conducteur professionnel / transport</strong></td>
-            <td><span class="speed-badge">0,00 g/l</span></td>
-            <td>0,00 mg/l</td>
-          </tr>
-        </tbody>
-      </table>
+<!-- ═══════════ VITESSES ═══════════ -->
+<section class="section reveal" id="vitesses">
+  <div class="section-head">
+    <div class="section-tag">Chapitre 03</div>
+    <h2 class="section-title">Limitations de<br/><em>Vitesse</em></h2>
+    <div class="divider"></div>
+    <p class="section-desc">Les vitesses maximales autorisées selon le type de voie et de véhicule.</p>
+  </div>
+
+  <div class="speed-layout">
+    <div class="speed-card">
+      <div class="speed-road">Autoroute</div>
+      <div><span class="speed-val">120</span><span class="speed-unit">km/h</span></div>
+      <div class="speed-name">Voiture particulière & moto</div>
+      <div class="speed-note">Poids lourds et bus : 100 km/h max</div>
     </div>
-
-    <div class="warn-box">
-      <h4>⚠️ Conséquences en cas de dépassement</h4>
-      <p>Suspension ou annulation du permis, amende lourde, emprisonnement possible. En cas d'accident sous influence d'alcool, la peine est aggravée. La récidive entraîne une peine de prison ferme.</p>
+    <div class="speed-card">
+      <div class="speed-road">Route nationale</div>
+      <div><span class="speed-val">100</span><span class="speed-unit">km/h</span></div>
+      <div class="speed-name">Hors agglomération</div>
+      <div class="speed-note">Poids lourds et bus : 80 km/h max</div>
     </div>
-
-    <div class="info-block">
-      <h3>🚨 Drogues et médicaments</h3>
-      <ul>
-        <li>La conduite sous l'influence de <strong>stupéfiants</strong> est strictement interdite, quel que soit le taux.</li>
-        <li>Certains <strong>médicaments</strong> (antihistaminiques, somnifères, anxiolytiques) peuvent affecter la conduite. Lisez toujours la notice.</li>
-        <li>Le pictogramme <strong>triangle rouge sur fond blanc</strong> sur une boîte de médicament signifie : <em>vigilance au volant</em>.</li>
-        <li>Si vous prenez des médicaments avec ce pictogramme, <strong>ne conduisez pas sans avis médical</strong>.</li>
-      </ul>
+    <div class="speed-card">
+      <div class="speed-road">Route secondaire</div>
+      <div><span class="speed-val">80</span><span class="speed-unit">km/h</span></div>
+      <div class="speed-name">Hors agglomération</div>
+      <div class="speed-note">Poids lourds et bus : 70 km/h max</div>
     </div>
-
-  </section>
-
-  <!-- ══════════════════════════════════
-       5. INFRACTIONS & AMENDES
-  ═══════════════════════════════════ -->
-  <section class="section" id="infractions">
-    <div class="section-header">
-      <div class="section-icon icon-red">⚠️</div>
-      <div>
-        <div class="section-title">Infractions & Amendes</div>
-        <div class="section-subtitle">Sanctions prévues par le code de la route marocain</div>
-      </div>
+    <div class="speed-card">
+      <div class="speed-road">Agglomération (ville)</div>
+      <div><span class="speed-val">60</span><span class="speed-unit">km/h</span></div>
+      <div class="speed-name">Tous types de véhicules</div>
+      <div class="speed-note">Sauf panneau de limitation locale affiché</div>
     </div>
+    <div class="speed-card">
+      <div class="speed-road">Zone scolaire / Zone 30</div>
+      <div><span class="speed-val">30</span><span class="speed-unit">km/h</span></div>
+      <div class="speed-name">Tous types de véhicules</div>
+      <div class="speed-note">Aux abords des établissements scolaires</div>
+    </div>
+    <div class="speed-card">
+      <div class="speed-road">Zone piétonne / résidentielle</div>
+      <div><span class="speed-val">20</span><span class="speed-unit">km/h</span></div>
+      <div class="speed-name">Tous types de véhicules</div>
+      <div class="speed-note">Piétons prioritaires, vitesse du pas</div>
+    </div>
+  </div>
 
+  <div class="speed-rain">
+    <span class="ico">🌧️</span>
+    <div>
+      <h4>Par temps de pluie ou mauvaise visibilité</h4>
+      <p>Réduire la vitesse de <strong>20 km/h</strong> par rapport au maximum autorisé. Augmenter les distances de sécurité (multiplier par 2). En cas de brouillard dense : vitesse libre mais adaptée à la visibilité.</p>
+    </div>
+  </div>
+</section>
+
+<!-- AD MID 2 -->
+<div class="ad-section">
+  <div class="ad-slot">[ ADSENSE 728×90 — activez après approbation ]</div>
+</div>
+
+<!-- ═══════════ ALCOOL ═══════════ -->
+<section class="section reveal" id="alcool">
+  <div class="section-head">
+    <div class="section-tag">Chapitre 04</div>
+    <h2 class="section-title">Alcool, Drogues<br/><em>& Conduite</em></h2>
+    <div class="divider"></div>
+    <p class="section-desc">Taux légaux et conséquences pénales au Maroc.</p>
+  </div>
+
+  <div class="oblig-grid">
+    <div class="oblig-card">
+      <span class="oblig-icon">🍷</span>
+      <div class="oblig-title">Conducteur ordinaire</div>
+      <div class="oblig-desc">Taux d'alcoolémie maximum autorisé : <strong style="color:var(--gold)">0,20 g/l</strong> dans le sang, soit 0,10 mg/l dans l'air expiré.</div>
+    </div>
+    <div class="oblig-card">
+      <span class="oblig-icon">🚌</span>
+      <div class="oblig-title">Conducteur professionnel</div>
+      <div class="oblig-desc">Transport de personnes, poids lourds, ambulances : taux <strong style="color:var(--crimson-lt)">0,00 g/l</strong>. Zéro tolérance absolue.</div>
+    </div>
+    <div class="oblig-card">
+      <span class="oblig-icon">💊</span>
+      <div class="oblig-title">Médicaments</div>
+      <div class="oblig-desc">Certains médicaments (antihistaminiques, somnifères) affectent la conduite. Lisez toujours la notice. Le triangle rouge sur la boîte = vigilance au volant.</div>
+    </div>
+    <div class="oblig-card">
+      <span class="oblig-icon">🚨</span>
+      <div class="oblig-title">Drogues — Zéro tolérance</div>
+      <div class="oblig-desc">La conduite sous l'influence de stupéfiants est interdite quel que soit le taux. Peine de prison en cas d'accident grave.</div>
+    </div>
+  </div>
+
+  <div class="alert-box alert-warn" style="margin-top:2rem;">
+    <span class="a-icon">🚨</span>
+    <div>
+      <h4>Conséquences légales</h4>
+      <p>Dépassement du taux légal : amende de 3 000 à 10 000 DH + suspension ou annulation du permis + emprisonnement possible. En cas d'accident sous alcool : peine aggravée. Récidive = prison ferme.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ INFRACTIONS ═══════════ -->
+<section class="section reveal" id="infractions">
+  <div class="section-head">
+    <div class="section-tag">Chapitre 05</div>
+    <h2 class="section-title">Infractions<br/><em>& Amendes</em></h2>
+    <div class="divider"></div>
+    <p class="section-desc">Barème officiel des sanctions prévues par le code de la route marocain.</p>
+  </div>
+
+  <div class="fine-table-wrap">
     <table class="fine-table">
       <thead>
         <tr>
           <th>Infraction</th>
-          <th>Amende</th>
-          <th>Points / Permis</th>
+          <th>Amende (DH)</th>
+          <th>Sanction permis</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td><strong>Excès de vitesse &lt; 20 km/h</strong></td>
-          <td class="fine-amount">300 – 700 DH</td>
-          <td>—</td>
-        </tr>
-        <tr>
-          <td><strong>Excès de vitesse 20–40 km/h</strong></td>
-          <td class="fine-amount">700 – 1 400 DH</td>
-          <td><span class="retrait">Suspension</span></td>
-        </tr>
-        <tr>
-          <td><strong>Excès de vitesse &gt; 40 km/h</strong></td>
-          <td class="fine-amount">1 400 – 3 000 DH</td>
-          <td><span class="retrait">Annulation</span></td>
-        </tr>
-        <tr>
-          <td><strong>Refus de priorité / Stop</strong></td>
-          <td class="fine-amount">700 – 1 400 DH</td>
-          <td><span class="retrait">Suspension</span></td>
-        </tr>
-        <tr>
-          <td><strong>Non-port de la ceinture</strong></td>
-          <td class="fine-amount">300 – 700 DH</td>
-          <td>—</td>
-        </tr>
-        <tr>
-          <td><strong>Usage du téléphone au volant</strong></td>
-          <td class="fine-amount">700 – 1 400 DH</td>
-          <td><span class="retrait">Suspension</span></td>
-        </tr>
-        <tr>
-          <td><strong>Alcool au volant (dépassement)</strong></td>
-          <td class="fine-amount">3 000 – 10 000 DH</td>
-          <td><span class="retrait">Annulation</span></td>
-        </tr>
-        <tr>
-          <td><strong>Dépassement interdit / dangereux</strong></td>
-          <td class="fine-amount">700 – 1 400 DH</td>
-          <td><span class="retrait">Suspension</span></td>
-        </tr>
-        <tr>
-          <td><strong>Feu rouge brûlé</strong></td>
-          <td class="fine-amount">700 – 1 400 DH</td>
-          <td><span class="retrait">Suspension</span></td>
-        </tr>
-        <tr>
-          <td><strong>Conduite sans permis</strong></td>
-          <td class="fine-amount">3 000 – 10 000 DH</td>
-          <td>Poursuites pénales</td>
-        </tr>
-        <tr>
-          <td><strong>Conduite sans assurance</strong></td>
-          <td class="fine-amount">1 400 – 5 000 DH</td>
-          <td>Immobilisation véhicule</td>
-        </tr>
-        <tr>
-          <td><strong>Stationnement interdit / gênant</strong></td>
-          <td class="fine-amount">300 – 700 DH</td>
-          <td>+ Mise en fourrière</td>
-        </tr>
-        <tr>
-          <td><strong>Défaut de visite technique</strong></td>
-          <td class="fine-amount">700 – 1 400 DH</td>
-          <td>Immobilisation véhicule</td>
-        </tr>
+        <tr><td>Excès de vitesse — moins de 20 km/h</td><td><span class="fine-amount">300 – 700</span></td><td>—</td></tr>
+        <tr><td>Excès de vitesse — 20 à 40 km/h</td><td><span class="fine-amount">700 – 1 400</span></td><td><span class="sanction-tag sanction-suspend">Suspension</span></td></tr>
+        <tr><td>Excès de vitesse — plus de 40 km/h</td><td><span class="fine-amount">1 400 – 3 000</span></td><td><span class="sanction-tag sanction-annul">Annulation</span></td></tr>
+        <tr><td>Brûler un feu rouge</td><td><span class="fine-amount">700 – 1 400</span></td><td><span class="sanction-tag sanction-suspend">Suspension</span></td></tr>
+        <tr><td>Refus de priorité / Stop non respecté</td><td><span class="fine-amount">700 – 1 400</span></td><td><span class="sanction-tag sanction-suspend">Suspension</span></td></tr>
+        <tr><td>Non-port de la ceinture</td><td><span class="fine-amount">300 – 700</span></td><td>—</td></tr>
+        <tr><td>Usage du téléphone au volant</td><td><span class="fine-amount">700 – 1 400</span></td><td><span class="sanction-tag sanction-suspend">Suspension</span></td></tr>
+        <tr><td>Dépassement interdit / dangereux</td><td><span class="fine-amount">700 – 1 400</span></td><td><span class="sanction-tag sanction-suspend">Suspension</span></td></tr>
+        <tr><td>Alcool au volant (dépassement du taux)</td><td><span class="fine-amount">3 000 – 10 000</span></td><td><span class="sanction-tag sanction-annul">Annulation</span></td></tr>
+        <tr><td>Conduite sans permis valide</td><td><span class="fine-amount">3 000 – 10 000</span></td><td><span class="sanction-tag sanction-penal">Pénal</span></td></tr>
+        <tr><td>Conduite sans assurance</td><td><span class="fine-amount">1 400 – 5 000</span></td><td><span class="sanction-tag sanction-immo">Immobilisation</span></td></tr>
+        <tr><td>Stationnement interdit / gênant</td><td><span class="fine-amount">300 – 700</span></td><td><span class="sanction-tag sanction-immo">Fourrière</span></td></tr>
+        <tr><td>Défaut de visite technique</td><td><span class="fine-amount">700 – 1 400</span></td><td><span class="sanction-tag sanction-immo">Immobilisation</span></td></tr>
+        <tr><td>Défaut de documents (assurance, carte grise)</td><td><span class="fine-amount">300 – 1 400</span></td><td>—</td></tr>
       </tbody>
     </table>
-
-    <div class="tip-box" style="margin-top:1.5rem;">
-      <h4>💡 Le système de points au Maroc</h4>
-      <ul>
-        <li>Le permis marocain est soumis à un <strong>système de suspension ou d'annulation</strong> selon la gravité de l'infraction.</li>
-        <li>La suspension peut aller de <strong>1 mois à 5 ans</strong>.</li>
-        <li>L'annulation oblige à repasser l'examen du permis de conduire.</li>
-        <li>En cas d'accident grave, des poursuites pénales s'ajoutent aux amendes.</li>
-      </ul>
-    </div>
-
-  </section>
-
-  <!-- ── MID AD 3 ── -->
-  <div class="ad-mid">
-    <div class="ad-placeholder" style="max-width:300px;min-height:250px;margin:auto;">[ AdSense 300×250 ]</div>
   </div>
 
-  <!-- ══════════════════════════════════
-       6. OBLIGATIONS DU CONDUCTEUR
-  ═══════════════════════════════════ -->
-  <section class="section" id="obligations">
-    <div class="section-header">
-      <div class="section-icon icon-green">✅</div>
-      <div>
-        <div class="section-title">Obligations du Conducteur</div>
-        <div class="section-subtitle">Ce que vous devez toujours avoir et faire</div>
-      </div>
-    </div>
-
-    <div class="card-grid">
-
-      <div class="card">
-        <span class="card-label label-green">📄 Documents</span>
-        <h3>Documents obligatoires</h3>
-        <p>Permis de conduire valide, carte grise (titre d'immatriculation), attestation d'assurance en cours de validité, et carte nationale d'identité.</p>
-      </div>
-
-      <div class="card">
-        <span class="card-label label-green">🔧 Équipements</span>
-        <h3>Équipement obligatoire</h3>
-        <p>Triangle de signalisation (panne), gilet réfléchissant, extincteur, trousse de premiers secours. À défaut : amende et mise en fourrière.</p>
-      </div>
-
-      <div class="card">
-        <span class="card-label label-green">💺 Ceinture</span>
-        <h3>Ceinture de sécurité</h3>
-        <p>Obligatoire pour le conducteur et <strong>tous les passagers</strong>, y compris à l'arrière. Les enfants de moins de 10 ans doivent être en siège enfant homologué.</p>
-      </div>
-
-      <div class="card">
-        <span class="card-label label-green">📱 Téléphone</span>
-        <h3>Téléphone au volant</h3>
-        <p>Strictement interdit de tenir son téléphone en conduisant. Le kit mains-libres est toléré mais le Bluetooth est conseillé. Les oreillettes sont interdites.</p>
-      </div>
-
-      <div class="card">
-        <span class="card-label label-green">💡 Éclairage</span>
-        <h3>Feux obligatoires</h3>
-        <p>Feux de position dès le coucher du soleil et par mauvaise visibilité. Feux de croisement dans les tunnels. Feux de route : uniquement hors agglomération sans véhicule en face.</p>
-      </div>
-
-      <div class="card">
-        <span class="card-label label-green">🚗 Visite technique</span>
-        <h3>Contrôle technique</h3>
-        <p>Obligatoire tous les <strong>2 ans</strong> pour les voitures particulières. Véhicule commercial : tous les ans. Sans contrôle valide = immobilisation du véhicule.</p>
-      </div>
-
-      <div class="card">
-        <span class="card-label label-green">🛑 Pannes & accidents</span>
-        <h3>Panne sur route</h3>
-        <p>Mettre les feux de détresse immédiatement. Placer le triangle à <strong>30m en ville</strong> et <strong>100m hors agglomération</strong>. Revêtir le gilet réfléchissant avant de sortir.</p>
-      </div>
-
-      <div class="card">
-        <span class="card-label label-green">🚨 Accident</span>
-        <h3>En cas d'accident</h3>
-        <p>Ne jamais fuir. Sécuriser les lieux, appeler le 15 (SAMU) ou le 19 (Police) ou le 177 (Gendarmerie). Remplir le constat amiable si dégâts matériels uniquement.</p>
-      </div>
-
-    </div>
-
-    <div class="warn-box">
-      <h4>⚠️ Numéros d'urgence à retenir</h4>
-      <p><strong>15</strong> — SAMU / Urgences médicales &nbsp;|&nbsp; <strong>19</strong> — Police &nbsp;|&nbsp; <strong>177</strong> — Gendarmerie Royale &nbsp;|&nbsp; <strong>150</strong> — Pompiers &nbsp;|&nbsp; <strong>141</strong> — Assistance autoroute</p>
-    </div>
-
-  </section>
-
-  <!-- ══════════════════════════════════
-       7. CONDUITE DE NUIT
-  ═══════════════════════════════════ -->
-  <section class="section" id="nuit">
-    <div class="section-header">
-      <div class="section-icon icon-purple">🌙</div>
-      <div>
-        <div class="section-title">Conduite de Nuit & Mauvais Temps</div>
-        <div class="section-subtitle">Précautions et règles spécifiques</div>
-      </div>
-    </div>
-
-    <div class="info-block">
-      <h3>🌙 Règles de nuit</h3>
+  <div class="alert-box alert-info" style="margin-top:2rem;">
+    <span class="a-icon">ℹ️</span>
+    <div>
+      <h4>Suspension vs Annulation</h4>
       <ul>
-        <li>Allumer les <strong>feux de croisement</strong> (code) dès le coucher du soleil.</li>
-        <li>Passer en <strong>feux de route</strong> sur route déserte hors agglomération, mais les éteindre dès qu'un véhicule arrive en face (à 150m environ).</li>
-        <li>Réduire la vitesse : la visibilité est réduite, votre distance de freinage peut dépasser votre portée d'éclairage.</li>
-        <li>Ne jamais rouler <strong>feux éteints</strong> ou avec les <strong>seuls feux de position</strong> la nuit.</li>
-        <li>Méfiez-vous des piétons et cyclistes non éclairés, très fréquents au Maroc.</li>
+        <li><strong>Suspension</strong> : interdiction temporaire de conduire (1 mois à 5 ans). Le permis est restitué à la fin.</li>
+        <li><strong>Annulation</strong> : le permis est invalidé. Vous devez repasser l'examen théorique ET pratique.</li>
+        <li><strong>Récidive</strong> : les peines sont systématiquement aggravées. Un casier judiciaire peut en résulter.</li>
       </ul>
     </div>
+  </div>
+</section>
 
-    <div class="info-block">
-      <h3>🌧️ Pluie & Brouillard</h3>
-      <ul>
-        <li>Réduire la vitesse de <strong>20 km/h</strong> sous la limite autorisée.</li>
-        <li>Augmenter les distances de sécurité (x2 par temps de pluie).</li>
-        <li>Allumer les feux de croisement en cas de visibilité réduite.</li>
-        <li>Les feux de brouillard (avant et arrière) s'utilisent uniquement si la visibilité est inférieure à <strong>50 mètres</strong>.</li>
-        <li>Attention à l'<strong>aquaplaning</strong> : réduire la vitesse, ne pas freiner brusquement, tenir fermement le volant.</li>
-      </ul>
-    </div>
-
-    <div class="info-block">
-      <h3>🌡️ Chaleur & Route au Maroc</h3>
-      <ul>
-        <li>Par forte chaleur, les pneus se dilatent : vérifier la pression à froid.</li>
-        <li>L'asphalte peut ramollir et réduire l'adhérence.</li>
-        <li>Les freins surchauffés perdent en efficacité dans les descentes longues : utiliser le frein moteur.</li>
-        <li>Hydratez-vous régulièrement et faites des pauses toutes les 2h sur autoroute.</li>
-      </ul>
-    </div>
-
-    <div class="info-block">
-      <h3>🌪️ Vent & Sable (régions du Sud)</h3>
-      <ul>
-        <li>Le vent latéral violent peut déporter le véhicule : tenir fermement le volant avec les deux mains.</li>
-        <li>Réduire la vitesse, surtout dans les zones ouvertes (plaines, cols).</li>
-        <li>Les tempêtes de sable réduisent la visibilité à zéro : s'arrêter en sécurité, allumer les feux de détresse.</li>
-      </ul>
-    </div>
-
-  </section>
-
-  <!-- ══════════════════════════════════
-       8. CONSEILS POUR L'EXAMEN
-  ═══════════════════════════════════ -->
-  <section class="section" id="examen">
-    <div class="section-header">
-      <div class="section-icon icon-green">🎓</div>
-      <div>
-        <div class="section-title">Préparer l'Examen</div>
-        <div class="section-subtitle">Conseils pratiques pour réussir du premier coup</div>
-      </div>
-    </div>
-
-    <div class="exam-grid">
-
-      <div class="exam-card">
-        <div class="num">01</div>
-        <h3>Format de l'examen</h3>
-        <p>L'examen théorique marocain comporte <strong>40 questions</strong> à choix multiples. Il faut obtenir au minimum <strong>36 bonnes réponses</strong> (90%) pour réussir.</p>
-      </div>
-
-      <div class="exam-card">
-        <div class="num">02</div>
-        <h3>Panneaux d'abord</h3>
-        <p>30 à 40% des questions portent sur les panneaux. Mémorisez les <strong>formes, couleurs et significations</strong> par catégorie, pas panneau par panneau.</p>
-      </div>
-
-      <div class="exam-card">
-        <div class="num">03</div>
-        <h3>Priorités — points critiques</h3>
-        <p>Questions sur les priorités = pièges classiques. Apprenez par cœur : <strong>Stop > Cédez le passage > Priorité à droite</strong>. L'agent prime sur tout.</p>
-      </div>
-
-      <div class="exam-card">
-        <div class="num">04</div>
-        <h3>Vitesses — soyez précis</h3>
-        <p>Les questions sur les vitesses sont directes. 120 autoroute, 100 nationale, 80 secondaire, 60 ville, 30 zone scolaire. Apprenez le tableau par cœur.</p>
-      </div>
-
-      <div class="exam-card">
-        <div class="num">05</div>
-        <h3>Lisez bien la question</h3>
-        <p>L'examen inclut souvent des "pièges" de formulation : "lequel de ces conducteurs a TORT", "qui EST prioritaire" etc. Lisez deux fois chaque question.</p>
-      </div>
-
-      <div class="exam-card">
-        <div class="num">06</div>
-        <h3>Testez-vous en ligne</h3>
-        <p>Passez des examens blancs marocains gratuits disponibles sur les sites d'auto-écoles. La pratique régulière vaut mieux que la mémorisation passive.</p>
-      </div>
-
-      <div class="exam-card">
-        <div class="num">07</div>
-        <h3>Ne laissez rien de vide</h3>
-        <p>Il n'y a pas de pénalité pour une mauvaise réponse. Si vous ne savez pas, éliminez les mauvaises options et choisissez ce qui vous semble le plus logique.</p>
-      </div>
-
-      <div class="exam-card">
-        <div class="num">08</div>
-        <h3>Révision la veille</h3>
-        <p>Ne pas bourrer de nouvelles infos la veille. Révisez les points faibles, dormez bien. Le jour J, lisez chaque question calmement avant de répondre.</p>
-      </div>
-
-    </div>
-
-    <div class="tip-box" style="margin-top:1.5rem;">
-      <h4>🏆 Chapitres les plus souvent au test</h4>
-      <ul>
-        <li>Panneaux de signalisation (surtout danger et interdiction)</li>
-        <li>Règles de priorité aux intersections</li>
-        <li>Limitations de vitesse par type de voie</li>
-        <li>Distances de sécurité et temps de réaction</li>
-        <li>Obligations du conducteur (documents, équipements)</li>
-        <li>Conduite en cas d'accident ou de panne</li>
-      </ul>
-    </div>
-
-  </section>
-
-  <!-- ── BOTTOM AD ── -->
-  <div class="ad-mid">
-    <div class="ad-placeholder" style="max-width:728px;margin:auto;">[ AdSense 728×90 — Bas de page ]</div>
+<!-- ═══════════ OBLIGATIONS ═══════════ -->
+<section class="section reveal" id="obligations">
+  <div class="section-head">
+    <div class="section-tag">Chapitre 06</div>
+    <h2 class="section-title">Obligations du<br/><em>Conducteur</em></h2>
+    <div class="divider"></div>
+    <p class="section-desc">Ce que vous devez impérativement avoir sur vous et dans votre véhicule.</p>
   </div>
 
-</main>
+  <div class="oblig-grid">
+    <div class="oblig-card"><span class="oblig-icon">📄</span><div class="oblig-title">Documents obligatoires</div><div class="oblig-desc">Permis de conduire valide, carte grise, attestation d'assurance en cours et carte nationale d'identité (CIN).</div></div>
+    <div class="oblig-card"><span class="oblig-icon">🔧</span><div class="oblig-title">Équipement de sécurité</div><div class="oblig-desc">Triangle de signalisation, gilet réfléchissant, extincteur homologué et trousse de premiers secours. Obligatoires dans le véhicule.</div></div>
+    <div class="oblig-card"><span class="oblig-icon">💺</span><div class="oblig-title">Ceinture de sécurité</div><div class="oblig-desc">Obligatoire pour TOUS les occupants, y compris à l'arrière. Enfants de moins de 10 ans : siège enfant homologué obligatoire.</div></div>
+    <div class="oblig-card"><span class="oblig-icon">📱</span><div class="oblig-title">Téléphone — règles</div><div class="oblig-desc">Tenir son téléphone en conduisant est strictement interdit. Kit mains-libres toléré. Oreillettes interdites. Bluetooth conseillé.</div></div>
+    <div class="oblig-card"><span class="oblig-icon">💡</span><div class="oblig-title">Éclairage obligatoire</div><div class="oblig-desc">Feux de position dès la tombée de la nuit. Feux de croisement dans les tunnels. Feux de route uniquement hors agglo sans véhicule en face.</div></div>
+    <div class="oblig-card"><span class="oblig-icon">🔍</span><div class="oblig-title">Contrôle technique</div><div class="oblig-desc">Tous les 2 ans pour les voitures particulières. Annuel pour véhicules commerciaux. Sans contrôle valide : immobilisation du véhicule.</div></div>
+    <div class="oblig-card"><span class="oblig-icon">🛑</span><div class="oblig-title">Panne sur la route</div><div class="oblig-desc">Feux de détresse immédiats. Triangle à 30m en ville, 100m hors agglo. Portez le gilet réfléchissant AVANT de sortir du véhicule.</div></div>
+    <div class="oblig-card"><span class="oblig-icon">🚨</span><div class="oblig-title">En cas d'accident</div><div class="oblig-desc">Ne jamais fuir. Sécuriser les lieux. Appeler les secours. Remplir un constat amiable si dégâts matériels uniquement (sans blessés).</div></div>
+  </div>
 
-<!-- ── FOOTER ── -->
+  <div class="urgency-row">
+    <div class="urgency-pill"><span class="pill-num">15</span> SAMU — Urgences médicales</div>
+    <div class="urgency-pill"><span class="pill-num">19</span> Police nationale</div>
+    <div class="urgency-pill"><span class="pill-num">177</span> Gendarmerie Royale</div>
+    <div class="urgency-pill"><span class="pill-num">150</span> Sapeurs-pompiers</div>
+    <div class="urgency-pill"><span class="pill-num">141</span> Assistance autoroute</div>
+  </div>
+</section>
+
+<!-- AD MID 3 -->
+<div class="ad-section">
+  <div class="ad-slot" style="max-width:300px;min-height:250px;">[ ADSENSE 300×250 — activez après approbation ]</div>
+</div>
+
+<!-- ═══════════ NUIT & MÉTÉO ═══════════ -->
+<section class="section reveal" id="nuit">
+  <div class="section-head">
+    <div class="section-tag">Chapitre 07</div>
+    <h2 class="section-title">Nuit, Météo<br/><em>& Conditions Difficiles</em></h2>
+    <div class="divider"></div>
+    <p class="section-desc">Précautions spécifiques selon les conditions de conduite au Maroc.</p>
+  </div>
+
+  <div class="oblig-grid">
+    <div class="oblig-card"><span class="oblig-icon">🌙</span><div class="oblig-title">Conduite de nuit</div><div class="oblig-desc">Feux de croisement obligatoires dès le coucher du soleil. Feux de route sur route déserte, éteindre à 150m d'un véhicule en face. Ne jamais rouler feux éteints.</div></div>
+    <div class="oblig-card"><span class="oblig-icon">🌧️</span><div class="oblig-title">Pluie et aquaplaning</div><div class="oblig-desc">Réduire de 20 km/h. Distance de sécurité × 2. En aquaplaning : ne pas freiner brusquement, tenir le volant, laisser ralentir naturellement.</div></div>
+    <div class="oblig-card"><span class="oblig-icon">🌫️</span><div class="oblig-title">Brouillard</div><div class="oblig-desc">Feux de brouillard uniquement si visibilité inférieure à 50 mètres. Vitesse adaptée. Ne pas dépasser en visibilité nulle.</div></div>
+    <div class="oblig-card"><span class="oblig-icon">☀️</span><div class="oblig-title">Forte chaleur (Maroc)</div><div class="oblig-desc">Vérifier la pression des pneus à froid. Utiliser le frein moteur en longue descente. Pause toutes les 2h. Hydratation essentielle.</div></div>
+    <div class="oblig-card"><span class="oblig-icon">🌪️</span><div class="oblig-title">Vent latéral et sable</div><div class="oblig-desc">Tenir le volant avec les deux mains. Réduire la vitesse dans les zones ouvertes. Tempête de sable : s'arrêter en sécurité, feux de détresse.</div></div>
+    <div class="oblig-card"><span class="oblig-icon">⛰️</span><div class="oblig-title">Cols et montagne</div><div class="oblig-desc">Ne pas couper le moteur en descente. Frein moteur privilégié. Klaxonner dans les virages sans visibilité. Priorité au véhicule qui monte.</div></div>
+  </div>
+</section>
+
+<!-- ═══════════ EXAMEN ═══════════ -->
+<section class="section reveal" id="examen">
+  <div class="section-head">
+    <div class="section-tag">Chapitre 08</div>
+    <h2 class="section-title">Préparer<br/><em>l'Examen</em></h2>
+    <div class="divider"></div>
+    <p class="section-desc">Stratégie et conseils pour réussir l'examen théorique du permis marocain du premier coup.</p>
+  </div>
+
+  <div class="exam-grid">
+    <div class="exam-card"><div class="e-num">01</div><h3>Format de l'examen</h3><p>40 questions à choix multiples. Minimum requis : 36 bonnes réponses sur 40 (90%). Durée : environ 30 minutes.</p></div>
+    <div class="exam-card"><div class="e-num">02</div><h3>Panneaux en priorité</h3><p>30 à 40% des questions portent sur les panneaux. Mémorisez par catégorie (forme + couleur + sens), pas panneau par panneau.</p></div>
+    <div class="exam-card"><div class="e-num">03</div><h3>Priorités — les pièges</h3><p>Questions classiques piège : agent > feu vert. Giratoire : priorité au véhicule déjà engagé. Mémorisez l'ordre absolu des 8 règles.</p></div>
+    <div class="exam-card"><div class="e-num">04</div><h3>Vitesses — précision</h3><p>Questions directes sur les vitesses. Apprenez le tableau complet : 120 / 100 / 80 / 60 / 30 / 20 km/h avec leurs contextes exacts.</p></div>
+    <div class="exam-card"><div class="e-num">05</div><h3>Lisez deux fois</h3><p>Les questions incluent des pièges de formulation : "qui a TORT", "qui N'EST PAS prioritaire". Lisez toujours deux fois avant de répondre.</p></div>
+    <div class="exam-card"><div class="e-num">06</div><h3>Tests blancs en ligne</h3><p>Passez des examens blancs sur les sites d'auto-écoles marocaines. La pratique régulière est plus efficace que la mémorisation passive.</p></div>
+    <div class="exam-card"><div class="e-num">07</div><h3>Pas de case vide</h3><p>Pas de pénalité pour mauvaise réponse. Si vous ne savez pas, éliminez les mauvaises options et choisissez ce qui semble le plus logique.</p></div>
+    <div class="exam-card"><div class="e-num">08</div><h3>La veille de l'examen</h3><p>Ne pas surcharger de nouvelles informations. Révisez les points faibles uniquement, dormez bien. Le jour J : lisez calmement, ne survolez pas.</p></div>
+  </div>
+
+  <div class="section-tag" style="margin-top:3rem;">Chapitres les plus fréquents</div>
+  <div class="topics-list">
+    <div class="topic-item">Panneaux signalisation (danger, interdiction)</div>
+    <div class="topic-item">Règles de priorité aux intersections</div>
+    <div class="topic-item">Limitations de vitesse par voie</div>
+    <div class="topic-item">Distances de sécurité</div>
+    <div class="topic-item">Obligations du conducteur</div>
+    <div class="topic-item">Conduite en cas d'accident ou panne</div>
+    <div class="topic-item">Alcool et conduite — taux légaux</div>
+    <div class="topic-item">Feux et éclairage du véhicule</div>
+  </div>
+
+  <div class="alert-box alert-tip" style="margin-top:2rem;">
+    <span class="a-icon">🏆</span>
+    <div>
+      <h4>La formule qui marche</h4>
+      <ul>
+        <li>Lire ce guide une fois intégralement (2h environ)</li>
+        <li>Faire 3 à 5 examens blancs en ligne sur des sites d'auto-écoles marocains</li>
+        <li>Revoir uniquement les catégories où vous faites des erreurs</li>
+        <li>Dormir suffisamment la veille — le cerveau consolide pendant le sommeil</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- AD BOTTOM -->
+<div class="ad-section">
+  <div class="ad-slot">[ ADSENSE 728×90 — Bas de page — activez après approbation ]</div>
+</div>
+
+</div><!-- /page-wrap -->
+
+<!-- ═══════════ FOOTER ═══════════ -->
 <footer>
-  <strong>Code de la Route Maroc</strong> — Guide gratuit pour l'examen du permis de conduire<br/>
-  <span style="margin-top:0.5rem;display:block;">Ce guide est fourni à titre informatif. Référez-vous toujours au texte officiel du code de la route marocain.</span>
+  <div class="footer-logo">Code de la Route Maroc</div>
+  <div class="footer-tagline">Guide gratuit pour l'examen du permis de conduire marocain</div>
+  <div class="footer-legal">Ce guide est fourni à titre informatif. Référez-vous toujours au texte officiel du code de la route marocain pour toute question juridique.</div>
 </footer>
 
 <button class="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Retour en haut">↑</button>
 
 <script>
-  // ── PROGRESS BAR ──
-  window.addEventListener('scroll', () => {
-    const scrollTop = window.scrollY;
-    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-    const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-    document.getElementById('progress').style.width = pct + '%';
+/* ── CURSOR ── */
+const cursor     = document.getElementById('cursor');
+const cursorRing = document.getElementById('cursor-ring');
+let mx = 0, my = 0, rx = 0, ry = 0;
+
+document.addEventListener('mousemove', e => {
+  mx = e.clientX; my = e.clientY;
+  cursor.style.left      = mx - 6  + 'px';
+  cursor.style.top       = my - 6  + 'px';
+});
+
+function animateRing() {
+  rx += (mx - rx) * 0.12;
+  ry += (my - ry) * 0.12;
+  cursorRing.style.left = rx - 18 + 'px';
+  cursorRing.style.top  = ry - 18 + 'px';
+  requestAnimationFrame(animateRing);
+}
+animateRing();
+
+document.querySelectorAll('a, button, .sign-card, .oblig-card, .exam-card').forEach(el => {
+  el.addEventListener('mouseenter', () => {
+    cursor.style.transform = 'scale(2)';
+    cursorRing.style.transform = 'scale(1.5)';
+    cursorRing.style.opacity = '0.3';
   });
+  el.addEventListener('mouseleave', () => {
+    cursor.style.transform = 'scale(1)';
+    cursorRing.style.transform = 'scale(1)';
+    cursorRing.style.opacity = '0.5';
+  });
+});
 
-  // ── ACTIVE NAV ──
-  const sections = document.querySelectorAll('.section');
-  const navLinks = document.querySelectorAll('nav a');
+/* ── PROGRESS ── */
+const progressBar = document.getElementById('progress');
+window.addEventListener('scroll', () => {
+  const scrolled = window.scrollY;
+  const total    = document.documentElement.scrollHeight - window.innerHeight;
+  progressBar.style.width = (scrolled / total * 100) + '%';
+});
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        navLinks.forEach(l => l.classList.remove('active'));
-        const link = document.querySelector(`nav a[href="#${e.target.id}"]`);
-        if (link) link.classList.add('active');
-      }
-    });
-  }, { rootMargin: '-40% 0px -50% 0px' });
+/* ── ACTIVE NAV ── */
+const sections = document.querySelectorAll('.section[id]');
+const navLinks = document.querySelectorAll('.nav-links a');
 
-  sections.forEach(s => observer.observe(s));
-
-  // ── MOBILE NAV TOGGLE ──
-  function toggleNav() {
-    const nav = document.getElementById('main-nav');
-    nav.style.display = nav.style.display === 'none' ? 'block' : 'none';
-  }
-
-  // ── SEARCH ──
-  function searchContent(query) {
-    const q = query.toLowerCase().trim();
-    const cards = document.querySelectorAll('.card, .info-block, .priority-card, .exam-card');
-
-    if (!q) {
-      cards.forEach(c => c.style.opacity = '1');
-      return;
+const navObserver = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      navLinks.forEach(l => l.classList.remove('active'));
+      const link = document.querySelector(`.nav-links a[href="#${e.target.id}"]`);
+      if (link) link.classList.add('active');
     }
+  });
+}, { rootMargin: '-30% 0px -60% 0px' });
 
-    cards.forEach(card => {
-      const text = card.textContent.toLowerCase();
-      card.style.opacity = text.includes(q) ? '1' : '0.25';
-    });
+sections.forEach(s => navObserver.observe(s));
+
+/* ── REVEAL ON SCROLL ── */
+const reveals = document.querySelectorAll('.reveal');
+const revealObserver = new IntersectionObserver(entries => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      e.target.style.transitionDelay = '0s';
+      e.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.08 });
+
+reveals.forEach(el => revealObserver.observe(el));
+
+/* ── STAGGER CARDS ON SCROLL ── */
+const cardGroups = document.querySelectorAll('.signs-grid, .oblig-grid, .exam-grid, .priority-list');
+const cardObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const cards = entry.target.querySelectorAll('.sign-card, .oblig-card, .exam-card, .priority-item');
+      cards.forEach((card, i) => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        card.style.transition = `opacity 0.5s ${i * 0.05}s ease, transform 0.5s ${i * 0.05}s ease`;
+        setTimeout(() => {
+          card.style.opacity = '1';
+          card.style.transform = 'none';
+        }, 50);
+      });
+      cardObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.05 });
+
+cardGroups.forEach(g => cardObserver.observe(g));
+
+/* ── MOBILE NAV ── */
+let mobileNavOpen = false;
+function toggleMobileNav() {
+  mobileNavOpen = !mobileNavOpen;
+  const nav = document.getElementById('mobile-nav');
+  const btn = document.getElementById('menu-btn');
+  nav.style.display   = mobileNavOpen ? 'flex' : 'none';
+  btn.textContent     = mobileNavOpen ? '✕ Fermer' : '☰ Menu';
+  document.body.style.overflow = mobileNavOpen ? 'hidden' : '';
+}
+
+function closeMobileNav() {
+  mobileNavOpen = false;
+  document.getElementById('mobile-nav').style.display = 'none';
+  document.getElementById('menu-btn').textContent = '☰ Menu';
+  document.body.style.overflow = '';
+}
+
+/* ── SEARCH ── */
+function searchContent(q) {
+  q = q.toLowerCase().trim();
+  const allCards = document.querySelectorAll(
+    '.sign-card, .priority-item, .speed-card, .fine-table tbody tr, .oblig-card, .exam-card, .topic-item'
+  );
+
+  if (!q) {
+    allCards.forEach(c => { c.style.opacity = '1'; c.style.transform = ''; });
+    return;
   }
+
+  allCards.forEach(c => {
+    const match = c.textContent.toLowerCase().includes(q);
+    c.style.opacity   = match ? '1' : '0.2';
+    c.style.transform = match ? '' : 'scale(0.97)';
+    c.style.transition = 'opacity 0.3s, transform 0.3s';
+  });
+}
 </script>
 
 </body>
